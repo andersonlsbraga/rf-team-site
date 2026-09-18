@@ -35,7 +35,9 @@ O brasão em `assets/logo.webp` foi extraído do card de horários, teve o fundo
 
 Todas as fotos passaram pelo mesmo processo: contraste local, nitidez por máscara de desfoque e ganho de saturação e brilho. **Nenhum conteúdo foi alterado, adicionado ou removido de nenhuma foto.**
 
-A foto do Mestre Rivelino no topo foi recortada do fundo do card original por segmentação (modelo `isnet-general-use`), teve o vazamento de fundo entre o braço e o tronco removido por cor, e ganha um esmaecimento na base para não terminar num corte reto.
+A foto do Mestre Rivelino no topo foi recortada do fundo do card original por segmentação (modelo `isnet-general-use`) e teve o vazamento de fundo entre o braço e o tronco removido por cor. Ela aparece inteira, sem esmaecimento e sem corte.
+
+Uma franja de alpha fraco sobrava na borda do recorte e o `drop-shadow` do CSS a espalhava, formando um retângulo escuro atrás dele. Corrigido zerando o alpha abaixo de 42, limpando o RGB sob as áreas transparentes, exportando o WebP com `exact=True` e `alpha_quality=100`, e trocando a sombra larga por uma justa.
 
 ---
 
@@ -85,7 +87,7 @@ Cinco pontos que não consegui verificar em fonte pública e que escrevi da form
 3. **Idade mínima do Jiu Kids.** O site cita os 7 anos apenas para o projeto social, que é o dado publicado. A turma kids da academia ficou sem idade declarada de propósito.
 4. **Mensalidade.** O FAQ manda para o WhatsApp em vez de citar valor, já que não tenho a tabela.
 5. **Uso das fotos dos atletas.** Vale um aviso aos retratados, e o ideal é substituir pelos originais da academia, que terão mais resolução que as versões publicadas pela imprensa.
-6. **Vínculo do Breno Yuri com a academia.** A imprensa sempre o trata só como "lutador acreano" e não achei fonte pública que cite a equipe dele. O bloco no site foi escrito com os dados de cartel e de LFA, que são verificáveis, sem afirmar em que academia ele treina. Se ele for atleta da casa, dá para deixar isso explícito; se não for, o bloco sai em um minuto.
+6. **Matheus Camilo e Breno Yuri começaram aqui, mas hoje não treinam na RF Team.** O bloco "Começaram neste tatame" foi escrito nesse tempo verbal de propósito, e de forma discreta: um cartão pequeno, sem manchete, fora do menu do topo e fora dos números de destaque. O vínculo do Matheus com a academia entre 2013 e 2017 está documentado pelo ge Globo; o do Breno veio da própria academia, porque a imprensa só o trata como "lutador acreano".
 7. **Foto do Mestre no topo.** O único arquivo disponível é o card de horários, e nele o texto foi impresso por cima do corpo dele, no lado esquerdo. Essa faixa danificada teve de ser descartada no recorte. Com a foto original, sem a arte do card, o recorte fica perfeito de ponta a ponta.
 
 ---
