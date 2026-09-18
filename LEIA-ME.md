@@ -79,7 +79,32 @@ Cinco pontos que não consegui verificar em fonte pública e que escrevi da form
 4. **Mensalidade.** O FAQ manda para o WhatsApp em vez de citar valor, já que não tenho a tabela.
 5. **Uso das fotos dos atletas.** Vale um aviso aos retratados, e o ideal é substituir pelos originais da academia, que terão mais resolução que as versões publicadas pela imprensa.
 
-O domínio em `<link rel="canonical">` está como `rfteam.com.br` e precisa ser trocado pelo endereço real na hora de publicar.
+---
+
+## Publicação
+
+| | |
+|---|---|
+| Domínio | `academiarfteam.online` (registrado na Hostinger em 18/09/2026) |
+| Repositório | `andersonlsbraga/rf-team-site`, público |
+| Hospedagem | GitHub Pages, branch `main`, raiz |
+| Build | concluído, conteúdo servido e conferido pelo CDN do Pages |
+
+O arquivo `CNAME` já fixa o domínio, então qualquer `git push` para `main` republica o site sozinho.
+
+### DNS que falta apontar na Hostinger
+
+Em **Domínios > academiarfteam.online > DNS / Nameservers**, apagar os registros `A` e `CNAME` de parking e criar:
+
+| Tipo | Nome | Valor | TTL |
+|---|---|---|---|
+| A | `@` | `185.199.108.153` | 3600 |
+| A | `@` | `185.199.109.153` | 3600 |
+| A | `@` | `185.199.110.153` | 3600 |
+| A | `@` | `185.199.111.153` | 3600 |
+| CNAME | `www` | `andersonlsbraga.github.io.` | 3600 |
+
+Depois de propagar, ligar o **Enforce HTTPS** no repositório. Se o certificado ficar com `https_certificate` nulo por mais de uma hora, o pedido travou: remover e recolocar o domínio custom resolve.
 
 ---
 
