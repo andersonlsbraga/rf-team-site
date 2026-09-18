@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RF Team | Academia do Mestre Rivelino em Rio Branco, Acre</title>
+<meta name="description" content="Jiu-Jitsu, Kickboxing e Karatê em Rio Branco sob o comando do Mestre Rivelino, faixa preta 5º grau e campeão mundial. Aula experimental gratuita na Rua Belém, 273, Nova Estação.">
+<meta name="theme-color" content="#0A0A0B">
+<link rel="canonical" href="https://academiarfteam.online/">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Academia RF Team">
+<meta property="og:title" content="RF Team | Academia do Mestre Rivelino em Rio Branco, Acre">
+<meta property="og:description" content="A academia que levou o Acre ao pódio mundial. Jiu-Jitsu, Kickboxing e Karatê com o Mestre Rivelino. Primeira aula é gratuita.">
+<meta property="og:url" content="https://academiarfteam.online/">
+<meta property="og:image" content="https://academiarfteam.online/assets/mestre-mundial-2019.webp">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Mestre Rivelino Souza no topo do pódio do Mundial de Jiu-Jitsu da CBJJE">
+<meta name="twitter:card" content="summary_large_image">
+
+<script>document.documentElement.classList.add('js');</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   RF TEAM · design tokens
+   Paleta extraída do brasão real da academia:
+   amarelo #FBE10A · grafite #333136 · vermelho #E8262C · branco
+   ============================================================ */
+:root{
+  --yellow:#FBE10A;
+  --yellow-2:#FFD400;
+  --yellow-dim:#C9B408;
+  --red:#E8262C;
+  --ink:#0A0A0B;
+  --panel:#111113;
+  --panel-2:#17171A;
+  --panel-3:#1F1F23;
+  --steel:#333136;
+  --bone:#F2F2EE;
+  --muted:#9A9AA2;
+  --muted-2:#6E6E76;
+  --line:rgba(251,225,10,.16);
+  --line-soft:rgba(255,255,255,.08);
+  --gold:#D9A441;
+  --silver:#B9BDC4;
+  --bronze:#C07A43;
+  --shadow-lg:0 30px 70px rgba(0,0,0,.55);
+  --shadow-yellow:0 18px 40px rgba(251,225,10,.18);
+  --maxw:1220px;
+  --pad:24px;
+  --r:18px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  margin:0;background:var(--ink);color:var(--bone);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font:inherit;}
+::selection{background:var(--yellow);color:#000;}
+
+h1,h2,h3,.display{
+  font-family:Anton,"Arial Narrow",Impact,sans-serif;font-weight:400;
+  text-transform:uppercase;letter-spacing:.012em;line-height:.99;margin:0;
+}
+p{margin:0;}
+
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad);}
+section{position:relative;}
+section[id]{scroll-margin-top:92px;}
+.sec{padding-block:clamp(64px,9vw,118px);}
+
+.eyebrow{
+  font-size:12px;font-weight:800;letter-spacing:.20em;text-transform:uppercase;
+  color:var(--yellow);display:inline-flex;align-items:center;gap:10px;margin:0 0 18px;
+}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--yellow);flex:none;}
+.eyebrow.center{justify-content:center;}
+.lead{color:var(--muted);font-size:clamp(15px,1.5vw,17.5px);max-width:62ch;}
+.hl{color:var(--yellow);}
+
+/* fundo de octógonos, derivado da forma do brasão */
+.mesh{position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M35 6h50l29 29v50l-29 29H35L6 85V35z' fill='none' stroke='%23FBE10A' stroke-opacity='.075' stroke-width='1.4'/%3E%3C/svg%3E");
+  background-size:120px 120px;
+  -webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 0%,transparent 72%);
+  mask-image:radial-gradient(120% 90% at 50% 0%,#000 0%,transparent 72%);}
+
+/* ---------------- botões ---------------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:15px 28px;border-radius:999px;border:1.5px solid transparent;
+  font-weight:800;font-size:14px;letter-spacing:.06em;text-transform:uppercase;
+  cursor:pointer;transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s,color .25s,border-color .25s;
+  white-space:nowrap;max-width:100%;
+}
+@media(max-width:420px){.btn{white-space:normal;text-align:center;padding-inline:20px;}}
+.btn:hover{transform:translateY(-2px);}
+.btn-primary{background:var(--yellow);color:#0A0A0B;box-shadow:var(--shadow-yellow);}
+.btn-primary:hover{background:#fff000;box-shadow:0 22px 48px rgba(251,225,10,.3);}
+.btn-ghost{border-color:rgba(255,255,255,.22);color:var(--bone);background:rgba(255,255,255,.03);}
+.btn-ghost:hover{border-color:var(--yellow);color:var(--yellow);}
+.btn-dark{background:#0A0A0B;color:var(--yellow);}
+.btn-dark:hover{background:#000;}
+.btn svg{width:17px;height:17px;flex:none;}
+
+/* ---------------- topo ---------------- */
+.util{background:#000;border-bottom:1px solid rgba(255,255,255,.07);font-size:12.5px;color:var(--muted);}
+.util .wrap{display:flex;gap:22px;align-items:center;justify-content:space-between;height:40px;}
+.util-l{display:flex;gap:22px;align-items:center;min-width:0;}
+.util span{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;}
+.util svg{width:13px;height:13px;color:var(--yellow);flex:none;}
+.util a:hover{color:var(--yellow);}
+@media(max-width:860px){.util-l span:nth-child(2){display:none;}}
+@media(max-width:560px){.util{display:none;}}
+
+header{
+  position:sticky;top:0;z-index:60;background:rgba(10,10,11,.82);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid transparent;transition:border-color .3s,background .3s,box-shadow .3s;
+}
+header.scrolled{border-bottom-color:var(--line);background:rgba(10,10,11,.95);box-shadow:0 14px 36px rgba(0,0,0,.5);}
+header .wrap{display:flex;align-items:center;gap:26px;height:74px;}
+.brand{display:flex;align-items:center;gap:12px;flex:none;}
+.brand img{width:46px;height:46px;object-fit:contain;}
+.brand b{font-family:Anton,sans-serif;font-weight:400;font-size:21px;letter-spacing:.05em;line-height:1;text-transform:uppercase;}
+.brand small{display:block;font-family:Inter,sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.2em;color:var(--yellow);text-transform:uppercase;margin-top:3px;}
+nav{margin-left:auto;display:flex;gap:28px;align-items:center;}
+nav a{font-size:13px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#C8C8CE;position:relative;padding-block:6px;transition:color .2s;}
+nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--yellow);transition:width .3s var(--ease);}
+nav a:hover{color:#fff;}
+nav a:hover::after{width:100%;}
+.nav-cta{flex:none;}
+@media(max-width:1060px){nav{display:none;}}
+.burger{display:none;margin-left:auto;background:none;border:1px solid rgba(255,255,255,.2);border-radius:10px;width:44px;height:44px;color:var(--bone);cursor:pointer;align-items:center;justify-content:center;}
+.burger svg{width:20px;height:20px;}
+@media(max-width:1060px){.burger{display:inline-flex;} .nav-cta{display:none;}}
+.drawer{position:fixed;inset:74px 0 auto;z-index:59;background:rgba(8,8,9,.985);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);transform:translateY(-120%);transition:transform .4s var(--ease);max-height:calc(100dvh - 74px);overflow-y:auto;}
+.drawer.open{transform:translateY(0);}
+.drawer .wrap{display:flex;flex-direction:column;gap:2px;padding-block:18px 26px;}
+.drawer a{padding:14px 2px;font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.06);}
+.drawer .btn{margin-top:18px;}
+
+/* ---------------- hero ---------------- */
+.hero{position:relative;overflow:hidden;background:
+   radial-gradient(90% 70% at 78% 92%, rgba(251,225,10,.14) 0%, transparent 58%),
+   radial-gradient(70% 60% at 8% 4%, rgba(232,38,44,.10) 0%, transparent 62%),
+   linear-gradient(180deg,#0A0A0B 0%,#0E0E10 52%,#08080A 100%);}
+.hero .wrap{position:relative;z-index:3;display:grid;grid-template-columns:1.14fr .86fr;gap:30px;align-items:end;
+  min-height:min(86vh,840px);padding-top:clamp(48px,6vw,72px);}
+.hero-copy{padding-bottom:clamp(52px,6vw,84px);max-width:700px;}
+.hero h1{font-size:clamp(40px,6vw,84px);line-height:.96;}
+.hero h1 span{display:block;}
+.hero h1 .l2{color:var(--yellow);text-shadow:0 0 60px rgba(251,225,10,.28);}
+.hero .lead{margin-top:24px;}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px;}
+.hero-seals{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px;}
+.seal{display:inline-flex;align-items:center;gap:9px;padding:9px 15px;border:1px solid var(--line);
+  border-radius:999px;background:rgba(251,225,10,.045);font-size:11.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#E9E4C4;}
+.seal i{width:6px;height:6px;border-radius:50%;background:var(--yellow);flex:none;box-shadow:0 0 12px var(--yellow);}
+
+.hero-figure{position:relative;align-self:end;justify-self:center;width:100%;max-width:560px;}
+.hero-figure img{width:auto;max-width:100%;height:auto;max-height:min(76vh,780px);
+  margin-inline:auto;position:relative;z-index:2;
+  filter:drop-shadow(0 40px 60px rgba(0,0,0,.65));
+  /* dissolve a base do recorte no fundo, em vez de cortar reto */
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 84%,rgba(0,0,0,.45) 94%,transparent 100%);
+  mask-image:linear-gradient(180deg,#000 0%,#000 84%,rgba(0,0,0,.45) 94%,transparent 100%);}
+.hero-figure::before{content:"";position:absolute;z-index:1;left:50%;bottom:0;transform:translateX(-50%);
+  width:118%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(251,225,10,.24) 0%,rgba(251,225,10,.06) 42%,transparent 68%);}
+.hero-figure figcaption{position:absolute;z-index:3;right:0;bottom:8px;text-align:right;
+  font-size:10.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+  padding:10px 16px;border-radius:12px;
+  background:rgba(8,8,9,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.08);}
+.hero-figure figcaption b{display:block;font-family:Anton,sans-serif;font-weight:400;font-size:19px;letter-spacing:.04em;color:var(--bone);margin-block:2px;}
+.hero-rail{position:absolute;left:18px;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;
+  font-size:10.5px;font-weight:800;letter-spacing:.34em;text-transform:uppercase;color:rgba(255,255,255,.26);z-index:4;}
+@media(max-width:1180px){.hero-rail{display:none;}}
+@media(max-width:980px){
+  .hero .wrap{grid-template-columns:1fr;min-height:0;padding-top:52px;gap:0;}
+  .hero-copy{padding-bottom:34px;}
+  .hero-figure{max-width:420px;margin-inline:auto;}
+  .hero-figure figcaption{right:auto;left:0;text-align:left;}
+  .hero-actions .btn{flex:1 1 200px;}
+}
+
+/* ---------------- marquees ---------------- */
+.marquee{overflow:hidden;position:relative;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);}
+.mq-track{display:flex;width:max-content;align-items:center;will-change:transform;}
+.mq-a{animation:mqLeft 46s linear infinite;}
+.mq-b{animation:mqRight 58s linear infinite;}
+.marquee:hover .mq-track{animation-play-state:paused;}
+@keyframes mqLeft{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@keyframes mqRight{from{transform:translateX(-50%);}to{transform:translateX(0);}}
+
+.fed{border-block:1px solid var(--line);background:#0C0C0E;}
+.fed .mq-track{gap:0;padding-block:19px;}
+.fed span{font-family:Anton,sans-serif;font-size:15px;letter-spacing:.14em;text-transform:uppercase;
+  color:#77777F;padding-inline:30px;position:relative;white-space:nowrap;transition:color .3s;}
+.fed span::after{content:"";position:absolute;right:0;top:50%;transform:translateY(-50%);width:5px;height:5px;background:var(--yellow);border-radius:50%;opacity:.55;}
+.fed:hover span{color:#A9A9B2;}
+
+/* ---------------- stats ---------------- */
+.stats{background:var(--panel);border-bottom:1px solid var(--line-soft);}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-soft);}
+.stat{background:var(--panel);padding:38px 26px;text-align:center;}
+.stat b{display:block;font-family:Anton,sans-serif;font-weight:400;font-size:clamp(40px,5.4vw,62px);line-height:1;color:var(--yellow);}
+.stat b sup{font-size:.44em;vertical-align:super;margin-left:2px;}
+.stat span{display:block;margin-top:12px;font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);}
+@media(max-width:760px){.stats-grid{grid-template-columns:repeat(2,1fr);} .stat{padding:30px 16px;}}
+
+/* ---------------- modalidades ---------------- */
+.mods{background:linear-gradient(180deg,#0A0A0B,#0E0E11);}
+.sec-head{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:end;margin-bottom:46px;}
+.sec-head h2{font-size:clamp(32px,4.6vw,58px);}
+@media(max-width:760px){.sec-head{grid-template-columns:1fr;}}
+
+.mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media(max-width:940px){.mod-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.mod-grid{grid-template-columns:1fr;}}
+.mod{position:relative;display:flex;flex-direction:column;background:var(--panel-2);
+  border:1px solid var(--line-soft);border-radius:var(--r);
+  padding:30px 26px 26px;overflow:hidden;transition:transform .35s var(--ease),border-color .35s,background .35s;}
+.mod::before{content:"";position:absolute;top:0;left:0;height:3px;width:0;background:var(--yellow);transition:width .45s var(--ease);}
+.mod::after{content:"";position:absolute;right:22px;top:22px;width:80px;height:80px;opacity:.09;pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M29 3h42l26 26v42l-26 26H29L3 71V29z' fill='none' stroke='%23FBE10A' stroke-width='5'/%3E%3C/svg%3E") center/contain no-repeat;
+  transition:transform .6s var(--ease),opacity .4s;}
+.mod:hover{transform:translateY(-6px);border-color:var(--line);background:var(--panel-3);}
+.mod:hover::before{width:100%;}
+.mod:hover::after{transform:rotate(22deg) scale(1.1);opacity:.18;}
+.mod .ic{width:48px;height:48px;border-radius:13px;display:grid;place-items:center;margin-bottom:20px;
+  background:linear-gradient(140deg,var(--yellow),var(--yellow-dim));color:#0A0A0B;box-shadow:0 10px 24px rgba(251,225,10,.24);}
+.mod .ic svg{width:24px;height:24px;}
+.mod h3{font-size:24px;margin-bottom:10px;}
+.mod p{font-size:14.5px;color:var(--muted);line-height:1.6;}
+.mod .times{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;padding-top:18px;border-top:1px dashed rgba(255,255,255,.1);}
+.mod p{margin-bottom:20px;}
+.mod .times b{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+  padding:6px 11px;border-radius:7px;background:rgba(251,225,10,.1);color:var(--yellow);border:1px solid rgba(251,225,10,.16);}
+
+/* ---------------- mestre ---------------- */
+.mestre{background:var(--panel);border-block:1px solid var(--line-soft);}
+.mestre-grid{display:grid;grid-template-columns:1fr 1.06fr;gap:clamp(30px,5vw,64px);align-items:center;}
+@media(max-width:980px){.mestre-grid{grid-template-columns:1fr;}}
+.mestre-figure{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-lg);}
+.mestre-figure img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;}
+.mestre-figure figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 22px 18px;
+  background:linear-gradient(transparent,rgba(6,6,7,.94));font-size:11.5px;font-weight:700;letter-spacing:.06em;color:#BDBDC4;}
+.mestre-figure figcaption b{color:var(--yellow);}
+.quote{margin:30px 0 0;padding:24px 26px;border-left:3px solid var(--yellow);background:rgba(251,225,10,.045);border-radius:0 12px 12px 0;}
+.quote p{font-family:Anton,sans-serif;font-weight:400;font-size:clamp(19px,2.2vw,25px);line-height:1.22;text-transform:uppercase;letter-spacing:.01em;}
+.quote cite{display:block;margin-top:12px;font-style:normal;font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+
+.tl{list-style:none;margin:30px 0 0;padding:0;}
+.tl li{position:relative;padding:0 0 22px 32px;border-left:1px solid rgba(255,255,255,.12);}
+.tl li:last-child{padding-bottom:0;border-left-color:transparent;}
+.tl li::before{content:"";position:absolute;left:-6px;top:6px;width:11px;height:11px;border-radius:50%;
+  background:var(--ink);border:2px solid var(--yellow);}
+.tl b{display:block;font-family:Anton,sans-serif;font-weight:400;font-size:13px;letter-spacing:.14em;color:var(--yellow);margin-bottom:3px;}
+.tl span{font-size:14.5px;color:#C4C4CB;line-height:1.55;}
+
+/* linhagem */
+.lineage{margin-top:clamp(44px,6vw,72px);border:1px solid var(--line);border-radius:var(--r);
+  background:linear-gradient(135deg,rgba(251,225,10,.055),rgba(255,255,255,.012));padding:clamp(26px,4vw,40px);}
+.lineage h3{font-size:clamp(20px,2.4vw,27px);margin-bottom:8px;}
+.lineage > p{font-size:14.5px;color:var(--muted);max-width:74ch;}
+.chain{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:16px;align-items:center;margin-top:28px;}
+.node{background:rgba(0,0,0,.34);border:1px solid var(--line-soft);border-radius:14px;padding:20px 18px;text-align:center;}
+.node b{display:block;font-family:Anton,sans-serif;font-weight:400;font-size:17px;letter-spacing:.03em;}
+.node span{display:block;margin-top:7px;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);line-height:1.5;}
+.node.now{border-color:var(--yellow);background:rgba(251,225,10,.08);}
+.node.now b{color:var(--yellow);}
+.arrow{color:var(--yellow);opacity:.6;display:grid;place-items:center;}
+.arrow svg{width:22px;height:22px;}
+@media(max-width:820px){.chain{grid-template-columns:1fr;} .arrow{transform:rotate(90deg);}}
+
+/* ---------------- medalhistas (scroller) ---------------- */
+.medals{background:
+  radial-gradient(70% 55% at 50% 0%,rgba(251,225,10,.08),transparent 62%),
+  linear-gradient(180deg,#08080A,#0C0C0E);
+  padding-block:clamp(64px,9vw,112px);overflow:hidden;}
+.medals .sec-head{margin-bottom:40px;}
+.scroller{margin-top:8px;padding-inline:var(--pad);}
+.scroller .mq-track{gap:20px;padding-block:8px;}
+.card{position:relative;flex:none;width:clamp(238px,26vw,300px);aspect-ratio:3/4;border-radius:16px;overflow:hidden;
+  border:1px solid rgba(255,255,255,.1);background:var(--panel-2);
+  transition:transform .45s var(--ease),border-color .45s,box-shadow .45s;}
+.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transition:transform .8s var(--ease),filter .5s;filter:saturate(1.04) contrast(1.03);}
+.card::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(transparent 26%,rgba(6,6,8,.72) 62%,rgba(5,5,6,.97) 100%);}
+.card:hover{transform:translateY(-8px);border-color:var(--yellow);box-shadow:0 28px 56px rgba(0,0,0,.6);}
+.card:hover img{transform:scale(1.07);}
+.card .body{position:absolute;inset:auto 0 0;z-index:2;padding:20px 18px;}
+.card .medal{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:900;letter-spacing:.14em;
+  text-transform:uppercase;padding:5px 11px;border-radius:999px;margin-bottom:11px;color:#0A0A0B;}
+.m-gold{background:linear-gradient(135deg,#F5D061,var(--gold));}
+.m-silver{background:linear-gradient(135deg,#E2E6EB,var(--silver));}
+.m-bronze{background:linear-gradient(135deg,#E0A071,var(--bronze));color:#1A0D04;}
+.m-team{background:linear-gradient(135deg,var(--yellow),var(--yellow-dim));}
+.card h3{font-size:20px;line-height:1.02;margin-bottom:8px;}
+.card .ach{font-size:13px;font-weight:600;color:#E4E4E8;line-height:1.42;}
+.card .meta{margin-top:9px;font-size:10.5px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:var(--yellow);opacity:.9;}
+
+.chips{margin-top:26px;padding-inline:var(--pad);}
+.chips .mq-track{gap:12px;padding-block:6px;}
+.chip{flex:none;display:inline-flex;align-items:center;gap:11px;padding:12px 19px;border-radius:999px;
+  border:1px solid var(--line-soft);background:rgba(255,255,255,.028);white-space:nowrap;transition:border-color .3s,background .3s;}
+.chip:hover{border-color:var(--line);background:rgba(251,225,10,.06);}
+.chip b{font-size:13px;font-weight:800;color:var(--bone);}
+.chip span{font-size:12.5px;color:var(--muted);}
+.chip i{width:7px;height:7px;border-radius:50%;flex:none;}
+.i-gold{background:var(--gold);} .i-silver{background:var(--silver);} .i-bronze{background:var(--bronze);}
+
+.medals-note{margin-top:30px;font-size:12.5px;color:var(--muted-2);text-align:center;}
+
+/* ---------------- destaque alissandro ---------------- */
+.featured{background:var(--panel);border-block:1px solid var(--line-soft);}
+.feat-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,60px);align-items:center;}
+@media(max-width:940px){.feat-grid{grid-template-columns:1fr;}}
+.feat-figure{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-lg);}
+.feat-figure img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;}
+.feat-figure .tag{position:absolute;top:16px;left:16px;padding:7px 14px;border-radius:999px;background:var(--yellow);
+  color:#0A0A0B;font-size:10.5px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;}
+.feat h2{font-size:clamp(30px,4vw,50px);margin-bottom:18px;}
+.feat .lead{margin-bottom:26px;}
+.titles{display:grid;gap:12px;}
+.title-row{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;
+  padding:18px 20px;border:1px solid var(--line-soft);border-radius:14px;background:rgba(255,255,255,.022);transition:border-color .3s,background .3s;}
+.title-row:hover{border-color:var(--line);background:rgba(251,225,10,.045);}
+.title-row .yr{font-family:Anton,sans-serif;font-weight:400;font-size:21px;color:var(--yellow);line-height:1.1;}
+.title-row b{display:block;font-size:15px;font-weight:800;margin-bottom:3px;}
+.title-row span{font-size:13.5px;color:var(--muted);line-height:1.5;}
+
+/* ---------------- horários ---------------- */
+.hours{background:linear-gradient(180deg,#0B0B0D,#0F0F12);}
+.table-wrap{overflow-x:auto;border:1px solid var(--line-soft);border-radius:var(--r);background:var(--panel-2);}
+table{width:100%;border-collapse:collapse;min-width:660px;}
+thead th{background:rgba(251,225,10,.07);color:var(--yellow);font-size:11px;font-weight:800;letter-spacing:.14em;
+  text-transform:uppercase;text-align:left;padding:17px 22px;border-bottom:1px solid var(--line);white-space:nowrap;}
+tbody td{padding:19px 22px;border-bottom:1px solid rgba(255,255,255,.055);font-size:14.5px;color:#D2D2D8;vertical-align:middle;}
+tbody tr:last-child td{border-bottom:none;}
+tbody tr{transition:background .25s;}
+tbody tr:hover{background:rgba(251,225,10,.038);}
+tbody td:first-child{font-weight:800;color:var(--bone);font-size:15px;}
+.tt{display:inline-block;padding:5px 10px;margin:2px 4px 2px 0;border-radius:7px;background:rgba(251,225,10,.1);
+  border:1px solid rgba(251,225,10,.16);color:var(--yellow);font-size:12px;font-weight:800;white-space:nowrap;}
+.hours-cta{margin-top:30px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;
+  padding:24px 26px;border:1px solid var(--line);border-radius:var(--r);background:rgba(251,225,10,.05);}
+.hours-cta p{flex:1 1 320px;font-size:15px;color:#E0E0E4;}
+.hours-cta b{color:var(--yellow);}
+/* no celular a tabela vira lista de cartões, sem rolagem lateral */
+@media(max-width:700px){
+  .table-wrap{overflow:visible;}
+  table{min-width:0;}
+  thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);}
+  tbody tr{display:block;padding:20px 20px 18px;border-bottom:1px solid rgba(255,255,255,.07);}
+  tbody tr:last-child{border-bottom:none;}
+  tbody td{display:block;padding:0;border:none;}
+  tbody td:first-child{font-size:17px;margin-bottom:4px;}
+  tbody td[data-l="dias"]{font-size:13.5px;color:var(--muted);margin-bottom:12px;}
+  .tt{margin:0 6px 6px 0;}
+}
+@media(max-width:560px){.eyebrow{font-size:11px;letter-spacing:.15em;}.eyebrow::before{width:20px;}}
+
+/* ---------------- projeto social ---------------- */
+.social{background:var(--panel-2);border-block:1px solid var(--line-soft);}
+.social-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,60px);align-items:center;}
+@media(max-width:940px){.social-grid{grid-template-columns:1fr;}}
+.social-figure{border-radius:var(--r);overflow:hidden;border:1px solid var(--line-soft);box-shadow:var(--shadow-lg);}
+.social-figure img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;}
+.mini-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:28px;}
+@media(max-width:400px){
+  .mini-stats{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .mini:last-child{grid-column:span 2;}
+}
+.mini{padding:20px 16px;border:1px solid var(--line-soft);border-radius:14px;background:rgba(0,0,0,.26);text-align:center;}
+.mini b{display:block;font-family:Anton,sans-serif;font-weight:400;font-size:30px;color:var(--yellow);line-height:1;}
+.mini span{display:block;margin-top:8px;font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);line-height:1.45;}
+
+/* ---------------- estrutura / local ---------------- */
+.place{background:linear-gradient(180deg,#0A0A0B,#0D0D0F);}
+.place-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(28px,5vw,56px);align-items:center;}
+@media(max-width:940px){.place-grid{grid-template-columns:1fr;}}
+.info-list{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:16px;}
+.info-list li{display:grid;grid-template-columns:auto 1fr;gap:15px;align-items:start;}
+.info-list .ic{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;flex:none;
+  border:1px solid var(--line);background:rgba(251,225,10,.07);color:var(--yellow);}
+.info-list .ic svg{width:19px;height:19px;}
+.info-list b{display:block;font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:3px;}
+.info-list span,.info-list a{font-size:15.5px;color:var(--bone);font-weight:600;}
+.info-list a:hover{color:var(--yellow);}
+.map{border-radius:var(--r);overflow:hidden;border:1px solid var(--line-soft);box-shadow:var(--shadow-lg);background:var(--panel-2);}
+.map iframe{display:block;width:100%;height:clamp(300px,42vw,440px);border:0;filter:grayscale(.34) invert(.9) hue-rotate(180deg) contrast(.88);}
+
+/* ---------------- faq ---------------- */
+.faq{background:var(--panel);border-top:1px solid var(--line-soft);}
+.faq-list{display:grid;gap:12px;max-width:900px;margin-inline:auto;}
+details{border:1px solid var(--line-soft);border-radius:14px;background:var(--panel-2);overflow:hidden;transition:border-color .3s;}
+details[open]{border-color:var(--line);}
+summary{cursor:pointer;list-style:none;padding:20px 24px;display:flex;align-items:center;gap:16px;
+  font-size:15.5px;font-weight:700;color:var(--bone);transition:color .2s;}
+summary::-webkit-details-marker{display:none;}
+summary:hover{color:var(--yellow);}
+summary::after{content:"";margin-left:auto;flex:none;width:11px;height:11px;border-right:2px solid var(--yellow);
+  border-bottom:2px solid var(--yellow);transform:rotate(45deg);transition:transform .3s var(--ease);}
+details[open] summary::after{transform:rotate(-135deg);}
+details .ans{padding:0 24px 22px 24px;font-size:14.5px;color:var(--muted);line-height:1.68;}
+
+/* ---------------- cta final ---------------- */
+.final{background:linear-gradient(135deg,var(--yellow) 0%,var(--yellow-2) 60%,#E8C400 100%);color:#0A0A0B;position:relative;overflow:hidden;}
+.final::after{content:"";position:absolute;right:-6%;bottom:-40%;width:min(520px,60%);aspect-ratio:1;opacity:.11;pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M29 3h42l26 26v42l-26 26H29L3 71V29z' fill='none' stroke='%23000' stroke-width='4'/%3E%3C/svg%3E") center/contain no-repeat;}
+.final .wrap{position:relative;z-index:2;text-align:center;padding-block:clamp(60px,8vw,96px);}
+.final .eyebrow{color:rgba(10,10,11,.66);}
+.final .eyebrow::before{background:rgba(10,10,11,.66);}
+.final h2{font-size:clamp(34px,5.6vw,72px);margin-bottom:18px;}
+.final p{max-width:56ch;margin-inline:auto;font-size:clamp(15px,1.6vw,18px);color:rgba(10,10,11,.78);font-weight:500;}
+.final .hero-actions{justify-content:center;margin-top:34px;}
+
+/* ---------------- rodapé ---------------- */
+footer{background:#060607;border-top:1px solid var(--line-soft);padding-block:56px 30px;}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;}
+@media(max-width:820px){.foot-grid{grid-template-columns:1fr;gap:32px;}}
+.foot-brand{display:flex;align-items:center;gap:13px;margin-bottom:18px;}
+.foot-brand img{width:54px;height:54px;object-fit:contain;}
+.foot-brand b{font-family:Anton,sans-serif;font-weight:400;font-size:23px;letter-spacing:.04em;text-transform:uppercase;line-height:1;}
+.foot-brand small{display:block;font-size:9.5px;font-weight:700;letter-spacing:.2em;color:var(--yellow);text-transform:uppercase;margin-top:4px;}
+footer p{font-size:14px;color:var(--muted);max-width:44ch;}
+.foot-col h4{font-size:11px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--yellow);margin:0 0 16px;}
+.foot-col ul{list-style:none;margin:0;padding:0;display:grid;gap:11px;}
+.foot-col a,.foot-col li{font-size:14px;color:var(--muted);transition:color .2s;}
+.foot-col a:hover{color:var(--yellow);}
+.socials{display:flex;gap:10px;margin-top:20px;}
+.socials a{width:42px;height:42px;border-radius:11px;border:1px solid var(--line-soft);display:grid;place-items:center;
+  color:var(--muted);transition:all .25s;}
+.socials a:hover{border-color:var(--yellow);color:var(--yellow);transform:translateY(-2px);}
+.socials svg{width:19px;height:19px;}
+.foot-bottom{margin-top:44px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);
+  display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:12.5px;color:var(--muted-2);}
+
+/* ---------------- whatsapp flutuante ---------------- */
+.wa{position:fixed;right:20px;bottom:20px;z-index:80;width:58px;height:58px;border-radius:50%;
+  background:#25D366;display:grid;place-items:center;color:#fff;box-shadow:0 14px 34px rgba(37,211,102,.4);
+  transition:transform .3s var(--ease);}
+.wa:hover{transform:scale(1.08);}
+.wa svg{width:30px;height:30px;}
+.wa .ping{position:absolute;top:-1px;right:-1px;width:14px;height:14px;background:var(--red);border-radius:50%;
+  border:2px solid #060607;animation:ping 2s ease-in-out infinite;}
+@keyframes ping{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.55;transform:scale(1.22);}}
+
+/* ---------------- reveal ---------------- */
+.reveal,.stagger>*{opacity:1;transform:none;}
+.js .reveal,.js .stagger>*{opacity:0;transform:translateY(26px);
+  transition:opacity .75s var(--ease),transform .75s var(--ease);}
+.js .reveal.vis,.js .stagger.vis>*{opacity:1;transform:none;}
+.js .stagger.vis>*:nth-child(2){transition-delay:.08s;}
+.js .stagger.vis>*:nth-child(3){transition-delay:.16s;}
+.js .stagger.vis>*:nth-child(4){transition-delay:.24s;}
+.js .stagger.vis>*:nth-child(5){transition-delay:.32s;}
+.js .stagger.vis>*:nth-child(6){transition-delay:.4s;}
+
+/* ---------------- acessibilidade / movimento ---------------- */
+:focus-visible{outline:2px solid var(--yellow);outline-offset:3px;border-radius:4px;}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  .mq-track{animation:none;}
+  .wa .ping{animation:none;}
+  .js .reveal,.js .stagger>*{opacity:1;transform:none;transition:none;}
+  .card,.mod,.btn,.card img{transition:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ barra utilitária ============ -->
+<div class="util">
+  <div class="wrap">
+    <div class="util-l">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Rua Belém, 273 &middot; Nova Estação &middot; Rio Branco/AC
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        Segunda a sexta, das 7h30 às 21h
+      </span>
+    </div>
+    <a href="https://wa.me/5568999840074" target="_blank" rel="noopener">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+        (68) 99984-0074
+      </span>
+    </a>
+  </div>
+</div>
+
+<!-- ============ header ============ -->
+<header id="hd">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="RF Team, página inicial">
+      <img src="assets/logo.webp" alt="Brasão da Academia RF Team" width="46" height="46">
+      <span><b>RF Team</b><small>Mestre Rivelino</small></span>
+    </a>
+    <nav aria-label="Navegação principal">
+      <a href="#modalidades">Modalidades</a>
+      <a href="#mestre">O Mestre</a>
+      <a href="#medalhistas">Medalhistas</a>
+      <a href="#horarios">Horários</a>
+      <a href="#projeto">Projeto Social</a>
+      <a href="#local">Onde Treinar</a>
+    </nav>
+    <a class="btn btn-primary nav-cta" href="https://wa.me/5568999840074?text=Ol%C3%A1%21%20Quero%20agendar%20minha%20aula%20experimental%20gratuita%20na%20RF%20Team." target="_blank" rel="noopener">Aula grátis</a>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="drawer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  <div class="wrap">
+    <a href="#modalidades">Modalidades</a>
+    <a href="#mestre">O Mestre</a>
+    <a href="#medalhistas">Medalhistas</a>
+    <a href="#horarios">Horários</a>
+    <a href="#projeto">Projeto Social</a>
+    <a href="#local">Onde Treinar</a>
+    <a class="btn btn-primary" href="https://wa.me/5568999840074?text=Ol%C3%A1%21%20Quero%20agendar%20minha%20aula%20experimental%20gratuita%20na%20RF%20Team." target="_blank" rel="noopener">Agendar aula grátis</a>
+  </div>
+</div>
+
+<main id="top">
+
+<!-- ============ hero ============ -->
+<section class="hero">
+  <div class="mesh" aria-hidden="true"></div>
+  <span class="hero-rail" aria-hidden="true">Rio Branco &middot; Acre &middot; Desde 2000</span>
+  <div class="wrap">
+    <div class="hero-copy">
+      <p class="eyebrow">Jiu-Jitsu &middot; Kickboxing &middot; Karatê</p>
+      <h1>
+        <span>A academia que</span>
+        <span>levou o Acre</span>
+        <span class="l2">ao pódio mundial</span>
+      </h1>
+      <p class="lead">
+        Há mais de duas décadas o Mestre Rivelino forma atletas na Rua Belém, em Nova Estação.
+        Faixa preta 5º grau, campeão mundial e responsável por uma equipe que vem medalhando
+        de Rio Branco a São Paulo, de Manaus a Florianópolis. Sua primeira aula é por nossa conta.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://wa.me/5568999840074?text=Ol%C3%A1%21%20Quero%20agendar%20minha%20aula%20experimental%20gratuita%20na%20RF%20Team." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2.02c-5.46 0-9.91 4.44-9.91 9.9 0 1.75.46 3.45 1.32 4.96L2 22.02l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.9-4.44 9.9-9.9a9.84 9.84 0 00-2.9-7.01 9.82 9.82 0 00-7.01-2.93zm0 18.13h-.01a8.2 8.2 0 01-4.19-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.37c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 018.23 8.24c0 4.54-3.7 8.22-8.24 8.22zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.41-.56-.42h-.48c-.16 0-.43.06-.65.31-.22.25-.85.83-.85 2.03s.87 2.36.99 2.53c.12.16 1.72 2.62 4.16 3.67.58.25 1.03.4 1.39.52.58.18 1.11.16 1.53.9.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.17-.06-.11-.22-.17-.47-.29z"/></svg>
+          Agendar aula grátis
+        </a>
+        <a class="btn btn-ghost" href="#horarios">Ver horários</a>
+      </div>
+      <div class="hero-seals">
+        <span class="seal"><i></i>Campeão mundial CBJJE 2019</span>
+        <span class="seal"><i></i>Faixa preta 5º grau</span>
+        <span class="seal"><i></i>Formando atletas desde 1995</span>
+      </div>
+    </div>
+
+    <figure class="hero-figure">
+      <img src="assets/mestre-rivelino.webp" alt="Mestre Rivelino Souza de kimono azul e faixa preta" width="663" height="1500" fetchpriority="high">
+      <figcaption>Mestre<b>Rivelino Souza</b>Faixa preta 5º grau</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ federações e circuitos ============ -->
+<div class="marquee fed" aria-label="Competições e entidades em que a equipe compete">
+  <div class="mq-track mq-a">
+    <span>Mundial CBJJE</span><span>IBJJF</span><span>AJP Tour Abu Dhabi</span><span>Copa Pódio</span>
+    <span>Copa América Internacional</span><span>Floripa Fall Open</span><span>Estadual de Rondônia</span>
+    <span>Campeonato Acreano</span><span>Sul-Americano</span><span>Rio Winter Open</span>
+    <span aria-hidden="true">Mundial CBJJE</span><span aria-hidden="true">IBJJF</span><span aria-hidden="true">AJP Tour Abu Dhabi</span><span aria-hidden="true">Copa Pódio</span>
+    <span aria-hidden="true">Copa América Internacional</span><span aria-hidden="true">Floripa Fall Open</span><span aria-hidden="true">Estadual de Rondônia</span>
+    <span aria-hidden="true">Campeonato Acreano</span><span aria-hidden="true">Sul-Americano</span><span aria-hidden="true">Rio Winter Open</span>
+  </div>
+</div>
+
+<!-- ============ números ============ -->
+<section class="stats">
+  <div class="stats-grid">
+    <div class="stat"><b data-count="2000">2000</b><span>Ano de fundação da academia</span></div>
+    <div class="stat"><b data-count="5">5</b><span>Grau da faixa preta do Mestre</span></div>
+    <div class="stat"><b data-count="2">2</b><span>Campeões mundiais formados na equipe</span></div>
+    <div class="stat"><b data-count="200" data-suffix="+">200+</b><span>Jovens atendidos de graça no projeto social</span></div>
+  </div>
+</section>
+
+<!-- ============ modalidades ============ -->
+<section class="sec mods" id="modalidades">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">O que se treina aqui</p>
+        <h2>Seis turmas,<br>um mesmo tatame</h2>
+      </div>
+      <p class="lead">Turmas separadas por idade, nível e objetivo. Quem chega hoje entra numa turma de iniciante, não no meio de uma roda de faixas coloridas.</p>
+    </div>
+
+    <div class="mod-grid stagger">
+      <article class="mod">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 4-3 3-3-3 3-4z"/><path d="M5 10l7 4 7-4"/><path d="M5 10v6l7 4 7-4v-6"/></svg></div>
+        <h3>Jiu-Jitsu Adulto</h3>
+        <p>O coração da casa. Quedas, passagem de guarda, raspagem e finalização, no ritmo de quem está começando e no ritmo de quem vai competir.</p>
+        <div class="times"><b>Seg, Qua e Sex</b><b>07h30</b><b>Meio-dia</b><b>18h</b></div>
+      </article>
+
+      <article class="mod">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="18" cy="17" r="3"/></svg></div>
+        <h3>Jiu-Jitsu No-Gi</h3>
+        <p>Sem kimono, com pegada diferente e ritmo mais rápido. É a modalidade que abre as portas das disputas de submission dentro e fora do estado.</p>
+        <div class="times"><b>Ter e Qui</b><b>Meio-dia</b></div>
+      </article>
+
+      <article class="mod">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15 20c0-2.3 1.3-4 3-4s3 1.7 3 4"/></svg></div>
+        <h3>Jiu Kids</h3>
+        <p>Disciplina, coordenação e respeito antes de qualquer medalha. Crianças aprendem a cair, levantar e resolver conflito sem violência.</p>
+        <div class="times"><b>Ter e Qui</b><b>18h</b></div>
+      </article>
+
+      <article class="mod">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 4l-3 7 4 2-5 7"/><circle cx="17" cy="5" r="2"/></svg></div>
+        <h3>Kickboxing Coletivo</h3>
+        <p>Condicionamento pesado, socos, chutes e muito trabalho de aparelho. Serve para quem quer emagrecer e para quem quer subir no ringue.</p>
+        <div class="times"><b>Seg, Qua e Sex</b><b>16h</b><b>20h</b></div>
+      </article>
+
+      <article class="mod">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M12 12v9M8.5 16h7"/></svg></div>
+        <h3>Kickboxing Feminino</h3>
+        <p>Turma só de mulheres, com ritmo e ambiente próprios. Defesa pessoal de verdade, sem o constrangimento de dividir o espaço com a turma mista.</p>
+        <div class="times"><b>Ter e Qui</b><b>17h</b></div>
+      </article>
+
+      <article class="mod">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v6c0 4.4-3.4 7.4-8 8-4.6-.6-8-3.6-8-8V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Karatê</h3>
+        <p>A base tradicional: postura, foco e golpe limpo. Excelente porta de entrada nas artes marciais para crianças e adultos.</p>
+        <div class="times"><b>Ter e Qui</b><b>19h</b></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ o mestre ============ -->
+<section class="sec mestre" id="mestre">
+  <div class="wrap">
+    <div class="mestre-grid">
+      <figure class="mestre-figure reveal">
+        <img src="assets/mestre-mundial-2019.webp" alt="Mestre Rivelino Souza no lugar mais alto do pódio do Campeonato Mundial de Jiu-Jitsu Esportivo da CBJJE, em 2019" width="1280" height="800" loading="lazy">
+        <figcaption><b>2019</b> &middot; Rivelino Souza no topo do pódio do Mundial da CBJJE, no Ibirapuera, São Paulo</figcaption>
+      </figure>
+
+      <div class="reveal">
+        <p class="eyebrow">Quem comanda o tatame</p>
+        <h2>Mestre Rivelino Souza</h2>
+        <p class="lead" style="margin-top:20px">
+          Rivelino Pereira de Souza treina jovens lutadores em Rio Branco desde 1995 e abriu a academia
+          em 2000. É faixa preta 5º grau, graduado pelo Mestre Luiz Neto, de Manaus, e responsável
+          técnico registrado da equipe. Da sua sala de tatames saíram campeões mundiais, atletas de
+          circuito internacional e nomes que chegaram ao MMA profissional.
+        </p>
+
+        <ul class="tl">
+          <li><b>1995</b><span>Começa a ensinar jiu-jitsu a jovens lutadores em Rio Branco.</span></li>
+          <li><b>2000</b><span>Funda a academia, que se tornaria a RF Team, na Rua Belém, em Nova Estação.</span></li>
+          <li><b>Anos 2000</b><span>É um dos primeiros professores de Francimar “Bodão” Barroso, acreano que chegaria ao UFC.</span></li>
+          <li><b>2015</b><span>Traz Ronaldo “Jacaré” Souza, então número 2 do peso-médio do UFC, para um seminário em Rio Branco.</span></li>
+          <li><b>2016</b><span>Prata no Campeonato Mundial de Jiu-Jitsu Esportivo, categoria master 3, no Ibirapuera.</span></li>
+          <li><b>2019</b><span>Campeão Mundial da CBJJE na master 4, peso médio faixa preta, com vitórias por finalização.</span></li>
+          <li><b>Hoje</b><span>Leva a equipe para disputar de Manaus a Florianópolis e mantém um projeto social gratuito na periferia da capital.</span></li>
+        </ul>
+
+        <blockquote class="quote">
+          <p>“Para chegar onde cheguei, basta treinar, ter foco e perseverança.”</p>
+          <cite>Mestre Rivelino Souza</cite>
+        </blockquote>
+      </div>
+    </div>
+
+    <!-- linhagem -->
+    <div class="lineage reveal">
+      <p class="eyebrow">Linhagem</p>
+      <h3>De onde vem a faixa preta desta academia</h3>
+      <p>No jiu-jitsu, o que sustenta um professor é a mão que amarrou a faixa nele. A graduação de 5º grau do Mestre Rivelino veio do Mestre Luiz Neto, nome forte do jiu-jitsu de Manaus, que segue vindo a Rio Branco para o seminário anual da equipe.</p>
+      <div class="chain">
+        <div class="node">
+          <b>Mestre Luiz Neto</b>
+          <span>Manaus &middot; Amazonas<br>Graduou o 5º grau</span>
+        </div>
+        <div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        <div class="node now">
+          <b>Mestre Rivelino</b>
+          <span>Rio Branco &middot; Acre<br>Faixa preta 5º grau</span>
+        </div>
+        <div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        <div class="node">
+          <b>Equipe RF Team</b>
+          <span>Faixas preta a branca<br>Adultos, kids e competição</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ medalhistas / scroller ============ -->
+<section class="medals" id="medalhistas">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">Pódios de verdade</p>
+        <h2>Os medalhistas<br>deste tatame</h2>
+      </div>
+      <p class="lead">Nomes, campeonatos e anos que podem ser conferidos na imprensa e nos resultados oficiais. Passe o dedo ou o mouse para ver com calma.</p>
+    </div>
+  </div>
+
+  <!-- fileira 1: cards com foto. Estão no HTML para funcionar mesmo sem JS;
+       o script apenas duplica a lista para fechar o loop infinito. -->
+  <div class="marquee scroller" role="group" aria-label="Atletas medalhistas da RF Team">
+    <div class="mq-track mq-a" id="cards">
+
+      <article class="card">
+        <img src="assets/atleta-rivelino.webp" alt="Mestre Rivelino Souza, campeão mundial de jiu-jitsu" width="560" height="747" loading="lazy" decoding="async">
+        <div class="body">
+          <span class="medal m-gold">Campeão mundial</span>
+          <h3>Mestre Rivelino</h3>
+          <p class="ach">Campeão Mundial da CBJJE na master 4, peso médio faixa preta, com vitórias por finalização.</p>
+          <p class="meta">São Paulo &middot; 2019</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="assets/atleta-alissandro.webp" alt="Mestre Alissandro França com sua medalha de Mundial" width="560" height="747" loading="lazy" decoding="async">
+        <div class="body">
+          <span class="medal m-gold">Campeão mundial</span>
+          <h3>Mestre Alissandro</h3>
+          <p class="ach">Campeão Mundial de Jiu-Jitsu Esportivo no meio-pesado faixa preta. Bronze no Mundial de 2025.</p>
+          <p class="meta">São Paulo &middot; 2015 e 2025</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="assets/atleta-limaneto.webp" alt="Lima Neto com as quatro medalhas de ouro da Copa América Internacional" width="560" height="747" loading="lazy" decoding="async">
+        <div class="body">
+          <span class="medal m-gold">4 ouros</span>
+          <h3>Lima Neto</h3>
+          <p class="ach">Quatro medalhas de ouro na Copa América Internacional: com e sem kimono, no peso e no absoluto.</p>
+          <p class="meta">Manaus &middot; 2026</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="assets/atleta-carlos.webp" alt="Carlos Rafael Bezerra no alto do pódio do Floripa Fall International Open" width="560" height="747" loading="lazy" decoding="async">
+        <div class="body">
+          <span class="medal m-gold">Ouro no-gi</span>
+          <h3>Carlos Rafael Bezerra</h3>
+          <p class="ach">Ouro no No-Gi e bronze no kimono, faixa roxa pesadíssimo, no Floripa Fall International Open da IBJJF.</p>
+          <p class="meta">Florianópolis &middot; 2026</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="assets/atleta-joaopedro.webp" alt="João Pedro Bessa com suas medalhas da Copa Acre Pódio" width="560" height="747" loading="lazy" decoding="async">
+        <div class="body">
+          <span class="medal m-silver">+40 medalhas</span>
+          <h3>João Pedro Bessa</h3>
+          <p class="ach">Dois ouros no Mundial da AJP em Rio Branco, campeão absoluto em Cuiabá e quatro medalhas na Copa Acre Pódio.</p>
+          <p class="meta">Circuito nacional &middot; 2024 a 2026</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="assets/atleta-khevyn.webp" alt="Khevyn Francys com a bandeira do Acre no tatame da RF Team" width="560" height="747" loading="lazy" decoding="async">
+        <div class="body">
+          <span class="medal m-team">Mundial juvenil</span>
+          <h3>Khevyn Francys</h3>
+          <p class="ach">Representou o Acre no Campeonato Mundial de Jiu-Jitsu no Ibirapuera, na categoria juvenil.</p>
+          <p class="meta">São Paulo &middot; 2025</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="assets/atleta-elienay.webp" alt="Elienay Amorim no lugar mais alto do pódio do estadual de Rondônia" width="560" height="747" loading="lazy" decoding="async">
+        <div class="body">
+          <span class="medal m-gold">Campeão estadual</span>
+          <h3>Elienay Amorim</h3>
+          <p class="ach">Campeão na faixa marrom no estadual de Rondônia. Entrou como aluno do projeto social e hoje é instrutor.</p>
+          <p class="meta">Porto Velho &middot; 2023</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="assets/atleta-equipe.webp" alt="Atleta da RF Team com a bandeira do Acre em campeonato fora do estado" width="560" height="747" loading="lazy" decoding="async">
+        <div class="body">
+          <span class="medal m-team">+20 medalhistas</span>
+          <h3>Delegação RF Team</h3>
+          <p class="ach">Trinta atletas levados ao campeonato estadual de Rondônia e mais de vinte voltaram com medalha.</p>
+          <p class="meta">Rondônia &middot; 2023</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <!-- fileira 2: chips de conquistas -->
+  <div class="marquee chips" role="group" aria-label="Outras conquistas da equipe">
+    <div class="mq-track mq-b" id="chips">
+      <span class="chip"><i class="i-gold"></i><b>Lua Branca</b><span>Ouro com e sem kimono &middot; Copa América Internacional 2026</span></span>
+      <span class="chip"><i class="i-bronze"></i><b>Adriano Moraes</b><span>Bronze no No-Gi &middot; Copa América Internacional 2026</span></span>
+      <span class="chip"><i class="i-gold"></i><b>Edson Lopes</b><span>Ouro no leve faixa azul master 3 &middot; Mundial 2016</span></span>
+      <span class="chip"><i class="i-bronze"></i><b>Débora Sales</b><span>Bronze no juvenil pluma faixa azul &middot; Mundial 2016</span></span>
+      <span class="chip"><i class="i-gold"></i><b>Júnior Lavor</b><span>Ouro no Rio Winter Open da IBJJF 2016 e prata no Sul-Americano</span></span>
+      <span class="chip"><i class="i-bronze"></i><b>Dennison Pinheiro</b><span>Bronze no Rio Winter Open da IBJJF 2016</span></span>
+      <span class="chip"><i class="i-silver"></i><b>Mestre Rivelino</b><span>Prata na master 3 &middot; Mundial de Jiu-Jitsu Esportivo 2016</span></span>
+      <span class="chip"><i class="i-gold"></i><b>Bruno Almeida</b><span>Faixa roxa de jiu-jitsu e faixa verde de kickboxing &middot; vitória por finalização no BRTL</span></span>
+      <span class="chip"><i class="i-gold"></i><b>Nicole, Vitória, Yasmin e Bianca</b><span>Meninas de 14 e 15 anos no alto do pódio &middot; estadual de Rondônia</span></span>
+    </div>
+  </div>
+
+  <div class="wrap"><p class="medals-note">Conquistas apuradas em reportagens do ge Globo, ContilNet, ac24horas, A Gazeta do Acre e Notícias da Hora, e em resultados publicados por CBJJE, IBJJF, AJP e Copa Pódio.</p></div>
+</section>
+
+<!-- ============ destaque: mestre alissandro ============ -->
+<section class="sec featured">
+  <div class="wrap">
+    <div class="feat-grid">
+      <figure class="feat-figure reveal">
+        <span class="tag">Aluno do Mestre Rivelino</span>
+        <img src="assets/atleta-alissandro.webp" alt="Mestre Alissandro Lima de França com sua medalha do Campeonato Mundial de Jiu-Jitsu" width="560" height="747" loading="lazy">
+      </figure>
+      <div class="feat reveal">
+        <p class="eyebrow">Do zero à faixa preta na mesma casa</p>
+        <h2>Mestre Alissandro França</h2>
+        <p class="lead">
+          Alissandro Lima de França treina com o Mestre Rivelino desde que era faixa branca. Hoje, aos
+          52 anos, é faixa preta, campeão mundial e o homem que trouxe para o Acre a primeira medalha
+          da delegação no Mundial de 2025. É a prova mais direta do que esta academia faz: pegar um
+          aluno iniciante e levá-lo até o pódio mundial sem nunca trocar de equipe.
+        </p>
+        <div class="titles">
+          <div class="title-row">
+            <span class="yr">2011</span>
+            <div><b>Bronze no Campeonato Mundial de Jiu-Jitsu Esportivo</b><span>Primeiro pódio mundial da carreira, ainda faixa preta em ascensão.</span></div>
+          </div>
+          <div class="title-row">
+            <span class="yr">2015</span>
+            <div><b>Campeão Mundial de Jiu-Jitsu Esportivo</b><span>Meio-pesado até 88,3 kg, faixa preta, no Pacaembu. Quatro lutas, quatro vitórias, numa chave com dez atletas.</span></div>
+          </div>
+          <div class="title-row">
+            <span class="yr">2025</span>
+            <div><b>Bronze no Campeonato Mundial de Jiu-Jitsu</b><span>Master faixa preta, no Ginásio do Ibirapuera. Venceu o cearense Ary Lobo por 2 a 0 e garantiu a única medalha do Acre na competição.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ horários ============ -->
+<section class="sec hours" id="horarios">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">Grade da semana</p>
+        <h2>Horários dos treinos</h2>
+      </div>
+      <p class="lead">Escolha o horário que cabe na sua rotina e apareça. A primeira aula é experimental e gratuita em qualquer uma das turmas.</p>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table>
+        <caption class="sr">Grade de horários das turmas da Academia RF Team</caption>
+        <thead>
+          <tr><th scope="col">Turma</th><th scope="col">Dias</th><th scope="col">Horários</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Jiu-Jitsu Adulto</td><td data-l="dias">Segunda, quarta e sexta</td><td><span class="tt">07h30</span><span class="tt">Meio-dia</span><span class="tt">18h</span></td></tr>
+          <tr><td>Jiu-Jitsu No-Gi</td><td data-l="dias">Terça e quinta</td><td><span class="tt">Meio-dia</span></td></tr>
+          <tr><td>Jiu Kids</td><td data-l="dias">Terça e quinta</td><td><span class="tt">18h</span></td></tr>
+          <tr><td>Kickboxing Coletivo</td><td data-l="dias">Segunda, quarta e sexta</td><td><span class="tt">16h</span><span class="tt">20h</span></td></tr>
+          <tr><td>Kickboxing Feminino</td><td data-l="dias">Terça e quinta</td><td><span class="tt">17h</span></td></tr>
+          <tr><td>Karatê</td><td data-l="dias">Terça e quinta</td><td><span class="tt">19h</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="hours-cta reveal">
+      <p><b>A aula experimental é gratuita.</b> Chame no WhatsApp dizendo qual turma te interessa e a gente confirma o dia certo para você aparecer.</p>
+      <a class="btn btn-primary" href="https://wa.me/5568999840074?text=Ol%C3%A1%21%20Quero%20agendar%20minha%20aula%20experimental%20gratuita%20na%20RF%20Team." target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ projeto social ============ -->
+<section class="sec social" id="projeto">
+  <div class="wrap">
+    <div class="social-grid">
+      <div class="reveal">
+        <p class="eyebrow">Combate pelo Bem</p>
+        <h2>O tatame que não cobra mensalidade</h2>
+        <p class="lead" style="margin-top:20px">
+          Sob responsabilidade do Mestre Rivelino, o projeto Combate pelo Bem leva jiu-jitsu de graça
+          para a comunidade do Conjunto Esperança, na Rua Euclides da Cunha. Quem comanda o dia a dia
+          é Elienay Amorim, que entrou no projeto como aluno em 2015, chegou à faixa marrom e hoje
+          é instrutor.
+        </p>
+        <p class="lead" style="margin-top:16px">
+          Numa das viagens, o projeto levou 30 atletas ao campeonato estadual de Rondônia e trouxe
+          mais de 20 medalhistas, incluindo meninas de 14 e 15 anos no lugar mais alto do pódio.
+          Rifas, bingos e arraiais pagam as passagens, porque não há patrocínio.
+        </p>
+        <div class="mini-stats">
+          <div class="mini"><b>200+</b><span>Alunos já atendidos</span></div>
+          <div class="mini"><b>70</b><span>Inscritos hoje</span></div>
+          <div class="mini"><b>7</b><span>Idade mínima para entrar</span></div>
+        </div>
+      </div>
+      <figure class="social-figure reveal">
+        <img src="assets/equipe-estadual.webp" alt="Delegação de atletas do projeto Combate pelo Bem e da RF Team com a bandeira do Acre em campeonato estadual" width="1280" height="800" loading="lazy">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ onde treinar ============ -->
+<section class="sec place" id="local">
+  <div class="wrap">
+    <div class="place-grid">
+      <div class="reveal">
+        <p class="eyebrow">Onde treinar</p>
+        <h2>Nova Estação,<br>Rio Branco</h2>
+        <p class="lead" style="margin-top:20px">Academia de artes marciais em funcionamento desde 2000, no mesmo endereço. Chegue uns minutos antes para conversar com o professor da turma.</p>
+        <ul class="info-list">
+          <li>
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div><b>Endereço</b><span>Rua Belém, 273 &middot; Nova Estação &middot; Rio Branco/AC</span></div>
+          </li>
+          <li>
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg></span>
+            <div><b>WhatsApp</b><a href="https://wa.me/5568999840074" target="_blank" rel="noopener">(68) 99984-0074</a></div>
+          </li>
+          <li>
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></span>
+            <div><b>Instagram</b><a href="https://instagram.com/academia_rfteam" target="_blank" rel="noopener">@academia_rfteam</a></div>
+          </li>
+          <li>
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <div><b>Funcionamento</b><span>Segunda a sexta, primeira turma às 7h30 e última às 20h</span></div>
+          </li>
+        </ul>
+      </div>
+      <div class="map reveal">
+        <iframe
+          title="Mapa da Academia RF Team na Rua Belém, 273, Nova Estação, Rio Branco, Acre"
+          src="https://www.google.com/maps?q=Rua%20Bel%C3%A9m%2C%20273%2C%20Nova%20Esta%C3%A7%C3%A3o%2C%20Rio%20Branco%20-%20AC&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ faq ============ -->
+<section class="sec faq">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:42px" class="reveal">
+      <p class="eyebrow center">Antes de aparecer</p>
+      <h2 style="font-size:clamp(30px,4.2vw,52px)">Dúvidas de quem<br>nunca treinou</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details open>
+        <summary>Nunca fiz luta na vida. Posso começar do zero?</summary>
+        <div class="ans">Pode, e é exatamente assim que quase todo mundo chega. Quem está começando entra pela turma de iniciantes e aprende a base antes de qualquer treino mais forte. O Mestre Alissandro, hoje campeão mundial, começou faixa branca nesta mesma academia.</div>
+      </details>
+      <details>
+        <summary>Preciso comprar kimono para a primeira aula?</summary>
+        <div class="ans">Não. Para a aula experimental, vá de roupa leve de treino, camiseta e short ou legging, e leve uma garrafa de água. O kimono só entra na conversa depois que você decidir continuar. Combine os detalhes pelo WhatsApp antes de aparecer.</div>
+      </details>
+      <details>
+        <summary>A partir de que idade as crianças podem treinar?</summary>
+        <div class="ans">A turma Jiu Kids acontece às terças e quintas, às 18h. O projeto social Combate pelo Bem atende a partir dos sete anos. Para saber em qual turma seu filho se encaixa melhor, chame no WhatsApp e converse com a academia.</div>
+      </details>
+      <details>
+        <summary>Tem turma só para mulheres?</summary>
+        <div class="ans">Sim. O Kickboxing Feminino tem turma exclusiva às terças e quintas, às 17h. As mulheres também são bem-vindas nas turmas mistas de jiu-jitsu, e a equipe já levou atletas femininas ao pódio em campeonatos fora do estado.</div>
+      </details>
+      <details>
+        <summary>Só quero condicionamento físico, não quero competir. Serve?</summary>
+        <div class="ans">Serve. A maior parte dos alunos treina por saúde, cabeça e defesa pessoal, não por medalha. O kickboxing coletivo é a turma mais procurada por quem quer gastar energia. Competir é opção de quem quiser, nunca obrigação.</div>
+      </details>
+      <details>
+        <summary>A academia leva alunos para competir fora do Acre?</summary>
+        <div class="ans">Leva, e com frequência. Só nos últimos anos a equipe disputou o Mundial em São Paulo, a Copa América Internacional em Manaus, o Floripa Fall International Open em Santa Catarina e o estadual de Rondônia, sempre com o Mestre Rivelino acompanhando.</div>
+      </details>
+      <details>
+        <summary>Quanto custa a mensalidade?</summary>
+        <div class="ans">Os valores mudam conforme a modalidade e a quantidade de treinos por semana. Chame no WhatsApp que a academia passa o plano certo para o seu caso, e aproveite para já marcar a aula experimental gratuita.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ cta final ============ -->
+<section class="final">
+  <div class="wrap">
+    <p class="eyebrow center">Primeira aula por nossa conta</p>
+    <h2>Chega de assistir<br>luta pela TV</h2>
+    <p>Rua Belém, 273, Nova Estação. Escolha um horário da grade, mande uma mensagem e apareça. O resto o tatame ensina.</p>
+    <div class="hero-actions">
+      <a class="btn btn-dark" href="https://wa.me/5568999840074?text=Ol%C3%A1%21%20Quero%20agendar%20minha%20aula%20experimental%20gratuita%20na%20RF%20Team." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2.02c-5.46 0-9.91 4.44-9.91 9.9 0 1.75.46 3.45 1.32 4.96L2 22.02l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.9-4.44 9.9-9.9a9.84 9.84 0 00-2.9-7.01 9.82 9.82 0 00-7.01-2.93zm0 18.13h-.01a8.2 8.2 0 01-4.19-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.37c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 018.23 8.24c0 4.54-3.7 8.22-8.24 8.22zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.41-.56-.42h-.48c-.16 0-.43.06-.65.31-.22.25-.85.83-.85 2.03s.87 2.36.99 2.53c.12.16 1.72 2.62 4.16 3.67.58.25 1.03.4 1.39.52.58.18 1.11.16 1.53.9.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.17-.06-.11-.22-.17-.47-.29z"/></svg>
+        Agendar minha aula grátis
+      </a>
+      <a class="btn btn-ghost" style="border-color:rgba(10,10,11,.3);color:#0A0A0B" href="https://instagram.com/academia_rfteam" target="_blank" rel="noopener">Ver a academia no Instagram</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ rodapé ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="assets/logo.webp" alt="Brasão da Academia RF Team" width="54" height="54" loading="lazy">
+          <span><b>RF Team</b><small>Mestre Rivelino</small></span>
+        </div>
+        <p>Academia de artes marciais em Rio Branco desde 2000. Jiu-Jitsu, Kickboxing e Karatê para crianças, adultos e atletas de competição.</p>
+        <div class="socials">
+          <a href="https://instagram.com/academia_rfteam" target="_blank" rel="noopener" aria-label="Instagram da RF Team">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://wa.me/5568999840074" target="_blank" rel="noopener" aria-label="WhatsApp da RF Team">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2.02c-5.46 0-9.91 4.44-9.91 9.9 0 1.75.46 3.45 1.32 4.96L2 22.02l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.9-4.44 9.9-9.9a9.84 9.84 0 00-2.9-7.01 9.82 9.82 0 00-7.01-2.93zm0 18.13h-.01a8.2 8.2 0 01-4.19-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.37c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 018.23 8.24c0 4.54-3.7 8.22-8.24 8.22zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.41-.56-.42h-.48c-.16 0-.43.06-.65.31-.22.25-.85.83-.85 2.03s.87 2.36.99 2.53c.12.16 1.72 2.62 4.16 3.67.58.25 1.03.4 1.39.52.58.18 1.11.16 1.53.9.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.17-.06-.11-.22-.17-.47-.29z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="foot-col">
+        <h4>Modalidades</h4>
+        <ul>
+          <li><a href="#modalidades">Jiu-Jitsu Adulto</a></li>
+          <li><a href="#modalidades">Jiu-Jitsu No-Gi</a></li>
+          <li><a href="#modalidades">Jiu Kids</a></li>
+          <li><a href="#modalidades">Kickboxing Coletivo</a></li>
+          <li><a href="#modalidades">Kickboxing Feminino</a></li>
+          <li><a href="#modalidades">Karatê</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>A academia</h4>
+        <ul>
+          <li><a href="#mestre">Mestre Rivelino</a></li>
+          <li><a href="#medalhistas">Medalhistas</a></li>
+          <li><a href="#horarios">Horários</a></li>
+          <li><a href="#projeto">Combate pelo Bem</a></li>
+          <li><a href="#local">Como chegar</a></li>
+          <li><a href="https://wa.me/5568999840074" target="_blank" rel="noopener">(68) 99984-0074</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>&copy; <span id="yr">2026</span> Academia RF Team &middot; Rua Belém, 273, Nova Estação, Rio Branco/AC</span>
+      <span>Responsável técnico: Rivelino Pereira de Souza</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5568999840074?text=Ol%C3%A1%21%20Quero%20agendar%20minha%20aula%20experimental%20gratuita%20na%20RF%20Team." target="_blank" rel="noopener" aria-label="Falar no WhatsApp com a RF Team">
+  <span class="ping" aria-hidden="true"></span>
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2.02c-5.46 0-9.91 4.44-9.91 9.9 0 1.75.46 3.45 1.32 4.96L2 22.02l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.9-4.44 9.9-9.9a9.84 9.84 0 00-2.9-7.01 9.82 9.82 0 00-7.01-2.93zm0 18.13h-.01a8.2 8.2 0 01-4.19-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.37c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 018.23 8.24c0 4.54-3.7 8.22-8.24 8.22zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.41-.56-.42h-.48c-.16 0-.43.06-.65.31-.22.25-.85.83-.85 2.03s.87 2.36.99 2.53c.12.16 1.72 2.62 4.16 3.67.58.25 1.03.4 1.39.52.58.18 1.11.16 1.53.9.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.17-.06-.11-.22-.17-.47-.29z"/></svg>
+</a>
+
+<!-- dados estruturados -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SportsActivityLocation",
+  "name":"Academia RF Team",
+  "alternateName":"RF Team Mestre Rivelino",
+  "description":"Academia de artes marciais em Rio Branco desde 2000, com Jiu-Jitsu, Kickboxing e Karatê sob o comando do Mestre Rivelino Souza, faixa preta 5º grau e campeão mundial.",
+  "address":{"@type":"PostalAddress","streetAddress":"Rua Belém, 273","addressLocality":"Rio Branco","addressRegion":"AC","addressCountry":"BR"},
+  "telephone":"+5568999840074",
+  "url":"https://academiarfteam.online/",
+  "sameAs":["https://instagram.com/academia_rfteam"],
+  "foundingDate":"2000",
+  "employee":{"@type":"Person","name":"Rivelino Pereira de Souza","jobTitle":"Mestre e responsável técnico"},
+  "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:30","closes":"21:00"}]
+}
+</script>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- medalhistas: duplica as fileiras para fechar o loop ----------
+     Os cards já estão no HTML, então a seção continua completa mesmo sem JS.
+     Aqui só clonamos a lista uma vez, que é o que permite o translateX(-50%)
+     rodar sem salto visual. */
+  [].forEach.call(document.querySelectorAll("#cards, #chips"), function(track){
+    var originais = [].slice.call(track.children);
+    originais.forEach(function(no){
+      var copia = no.cloneNode(true);
+      copia.setAttribute("aria-hidden", "true");
+      [].forEach.call(copia.querySelectorAll("img"), function(img){ img.loading = "eager"; });
+      track.appendChild(copia);
+    });
+  });
+
+  /* Cards fora da área visível na horizontal nunca disparariam o lazy-load,
+     porque o navegador não conta o deslocamento da animação. Assim que a seção
+     entra na tela, forçamos o carregamento de todas as fotos. */
+  (function(){
+    var secao = document.querySelector(".medals");
+    if (!secao) return;
+    var carregar = function(){
+      [].forEach.call(secao.querySelectorAll("img[loading=lazy]"), function(img){ img.loading = "eager"; });
+    };
+    if ("IntersectionObserver" in window){
+      var ioImgs = new IntersectionObserver(function(entries){
+        if (entries[0].isIntersecting){ carregar(); ioImgs.disconnect(); }
+      }, {rootMargin:"300px"});
+      ioImgs.observe(secao);
+    } else { carregar(); }
+  })();
+
+  /* ---------- arrastar para navegar no scroller (toque e mouse) ---------- */
+  [].forEach.call(document.querySelectorAll(".marquee.scroller, .marquee.chips"), function(mq){
+    var track = mq.querySelector(".mq-track");
+    var down=false, startX=0, shift=0, moved=0;
+    function pause(on){ track.style.animationPlayState = on ? "paused" : ""; }
+    mq.addEventListener("pointerdown", function(e){
+      down=true; moved=0; startX=e.clientX; pause(true); mq.setPointerCapture(e.pointerId);
+    });
+    mq.addEventListener("pointermove", function(e){
+      if(!down) return;
+      var d = e.clientX - startX; startX = e.clientX; shift += d; moved += Math.abs(d);
+      track.style.transform = "translateX("+shift+"px)";
+    });
+    ["pointerup","pointercancel","pointerleave"].forEach(function(ev){
+      mq.addEventListener(ev, function(){
+        if(!down) return; down=false;
+        track.style.transform = ""; shift = 0; pause(false);
+      });
+    });
+    mq.addEventListener("click", function(e){ if(moved>6) e.preventDefault(); }, true);
+  });
+
+  /* ---------- sombra do header ---------- */
+  var hd = document.getElementById("hd");
+  var onScroll = function(){ hd.classList.toggle("scrolled", window.scrollY > 12); };
+  window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+  /* ---------- menu mobile ---------- */
+  var burger = document.getElementById("burger"), drawer = document.getElementById("drawer");
+  burger.addEventListener("click", function(){
+    var open = drawer.classList.toggle("open");
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  [].forEach.call(drawer.querySelectorAll("a"), function(a){
+    a.addEventListener("click", function(){
+      drawer.classList.remove("open"); burger.setAttribute("aria-expanded","false");
+    });
+  });
+
+  /* ---------- reveal ---------- */
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if ("IntersectionObserver" in window && !reduce){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add("vis"); io.unobserve(en.target); }
+      });
+    }, {rootMargin:"0px 0px -8% 0px", threshold:.12});
+    [].forEach.call(document.querySelectorAll(".reveal, .stagger"), function(el){ io.observe(el); });
+  } else {
+    [].forEach.call(document.querySelectorAll(".reveal, .stagger"), function(el){ el.classList.add("vis"); });
+  }
+
+  /* ---------- contadores ---------- */
+  function countUp(el){
+    var target = parseInt(el.getAttribute("data-count"), 10);
+    var suffix = el.getAttribute("data-suffix") || "";
+    if (isNaN(target) || reduce) return;
+    var start = null, dur = 1500;
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start)/dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.floor(eased * target).toLocaleString("pt-BR") + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if ("IntersectionObserver" in window){
+    var io2 = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ countUp(en.target); io2.unobserve(en.target); }
+      });
+    }, {threshold:.6});
+    [].forEach.call(document.querySelectorAll("[data-count]"), function(el){ io2.observe(el); });
+  }
+
+  /* ---------- ano no rodapé ---------- */
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
