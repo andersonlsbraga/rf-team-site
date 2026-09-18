@@ -92,19 +92,19 @@ Cinco pontos que não consegui verificar em fonte pública e que escrevi da form
 
 O arquivo `CNAME` já fixa o domínio, então qualquer `git push` para `main` republica o site sozinho.
 
-### DNS que falta apontar na Hostinger
+### DNS (já apontado)
 
-Em **Domínios > academiarfteam.online > DNS / Nameservers**, apagar os registros `A` e `CNAME` de parking e criar:
+Zona da Hostinger configurada em 18/09/2026, substituindo o parking:
 
-| Tipo | Nome | Valor | TTL |
-|---|---|---|---|
-| A | `@` | `185.199.108.153` | 3600 |
-| A | `@` | `185.199.109.153` | 3600 |
-| A | `@` | `185.199.110.153` | 3600 |
-| A | `@` | `185.199.111.153` | 3600 |
-| CNAME | `www` | `andersonlsbraga.github.io.` | 3600 |
+| Tipo | Nome | Valor |
+|---|---|---|
+| A | `@` | `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` |
+| AAAA | `@` | `2606:50c0:8000::153`, `:8001::153`, `:8002::153`, `:8003::153` |
+| CNAME | `www` | `andersonlsbraga.github.io.` |
 
-Depois de propagar, ligar o **Enforce HTTPS** no repositório. Se o certificado ficar com `https_certificate` nulo por mais de uma hora, o pedido travou: remover e recolocar o domínio custom resolve.
+Certificado Let's Encrypt emitido para o apex e o `www`, **Enforce HTTPS ligado**. O `www` e o `http` redirecionam para `https://academiarfteam.online/`.
+
+O certificado ficou preso em nulo no primeiro pedido, porque tinha sido solicitado antes do DNS resolver. Resolvido removendo e recolocando o domínio custom pela API, que dispara um pedido novo.
 
 ---
 
