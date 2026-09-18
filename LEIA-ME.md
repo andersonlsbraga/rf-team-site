@@ -62,10 +62,17 @@ Nada no site foi estimado ou inventado. Cada dado tem fonte publicada:
 | Combate pelo Bem: 200+ atendidos, 70 inscritos, 30 atletas a RO | ContilNet, dez/2023 |
 | Edson Lopes, Débora Sales, Júnior Lavor, Dennison Pinheiro | globoesporte, retrospectiva 2016 |
 | Bruno Almeida no BRTL | A Gazeta, 26/12/2024 |
+| Matheus Camilo treinou aqui entre 2013 e 2017 com o Mestre Rivelino | ge Globo, 19/01/2025 e 16/05/2025 |
+| Fala do Mestre Riva sobre o Matheus e o kimono de presente | ge Globo, 19/01/2025 (Rede Amazônica Acre) |
+| Matheus Camilo: cartel 11-3, 2 vitórias no UFC, 5 nocautes | Ficha oficial do UFC e ufcstats |
+| Matheus Camilo: 2º acreano no UFC, elogio de Dana White | Ag Fight/UOL, 15/05/2025 |
+| Breno Yuri: cartel 6-2, 3 lutas no LFA, triângulo em Lucas Andrade | ge Globo, 24/01/2026 e 14/09/2026 |
 
 As fotos dos atletas vêm dessas mesmas reportagens, creditadas a "Arquivo pessoal" e "Divulgação/RF Team", ou seja, material da própria academia e dos próprios atletas.
 
 **Correção aplicada:** o card informa Karatê às 20h. Conforme sua observação, o site publica **19h**.
+
+**Remoção solicitada:** nenhuma menção a Francimar "Bodão" Barroso aparece no site. O lugar dele na linha do tempo do Mestre passou a ser o período de 2013 a 2017, em que o Matheus Camilo treinou aqui.
 
 ---
 
@@ -78,6 +85,8 @@ Cinco pontos que não consegui verificar em fonte pública e que escrevi da form
 3. **Idade mínima do Jiu Kids.** O site cita os 7 anos apenas para o projeto social, que é o dado publicado. A turma kids da academia ficou sem idade declarada de propósito.
 4. **Mensalidade.** O FAQ manda para o WhatsApp em vez de citar valor, já que não tenho a tabela.
 5. **Uso das fotos dos atletas.** Vale um aviso aos retratados, e o ideal é substituir pelos originais da academia, que terão mais resolução que as versões publicadas pela imprensa.
+6. **Vínculo do Breno Yuri com a academia.** A imprensa sempre o trata só como "lutador acreano" e não achei fonte pública que cite a equipe dele. O bloco no site foi escrito com os dados de cartel e de LFA, que são verificáveis, sem afirmar em que academia ele treina. Se ele for atleta da casa, dá para deixar isso explícito; se não for, o bloco sai em um minuto.
+7. **Foto do Mestre no topo.** O único arquivo disponível é o card de horários, e nele o texto foi impresso por cima do corpo dele, no lado esquerdo. Essa faixa danificada teve de ser descartada no recorte. Com a foto original, sem a arte do card, o recorte fica perfeito de ponta a ponta.
 
 ---
 

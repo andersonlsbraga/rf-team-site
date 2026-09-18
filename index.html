@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>RF Team | Academia do Mestre Rivelino em Rio Branco, Acre</title>
-<meta name="description" content="Jiu-Jitsu, Kickboxing e Karatê em Rio Branco sob o comando do Mestre Rivelino, faixa preta 5º grau e campeão mundial. Aula experimental gratuita na Rua Belém, 273, Nova Estação.">
+<meta name="description" content="Jiu-Jitsu, Kickboxing e Karatê em Rio Branco com o Mestre Rivelino, faixa preta 5º grau e campeão mundial. A academia onde Matheus Camilo, do UFC, começou. Aula experimental gratuita na Rua Belém, 273.">
 <meta name="theme-color" content="#0A0A0B">
 <link rel="canonical" href="https://academiarfteam.online/">
 <link rel="icon" href="assets/favicon.png" type="image/png">
@@ -14,7 +14,7 @@
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Academia RF Team">
 <meta property="og:title" content="RF Team | Academia do Mestre Rivelino em Rio Branco, Acre">
-<meta property="og:description" content="A academia que levou o Acre ao pódio mundial. Jiu-Jitsu, Kickboxing e Karatê com o Mestre Rivelino. Primeira aula é gratuita.">
+<meta property="og:description" content="A academia que levou o Acre ao pódio mundial e revelou Matheus Camilo, hoje no UFC. Jiu-Jitsu, Kickboxing e Karatê com o Mestre Rivelino. Primeira aula é gratuita.">
 <meta property="og:url" content="https://academiarfteam.online/">
 <meta property="og:image" content="https://academiarfteam.online/assets/mestre-mundial-2019.webp">
 <meta property="og:image:width" content="1280">
@@ -173,12 +173,14 @@ nav a:hover::after{width:100%;}
 .seal i{width:6px;height:6px;border-radius:50%;background:var(--yellow);flex:none;box-shadow:0 0 12px var(--yellow);}
 
 .hero-figure{position:relative;align-self:end;justify-self:center;width:100%;max-width:560px;}
-.hero-figure img{width:auto;max-width:100%;height:auto;max-height:min(76vh,780px);
-  margin-inline:auto;position:relative;z-index:2;
-  filter:drop-shadow(0 40px 60px rgba(0,0,0,.65));
-  /* dissolve a base do recorte no fundo, em vez de cortar reto */
-  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 84%,rgba(0,0,0,.45) 94%,transparent 100%);
-  mask-image:linear-gradient(180deg,#000 0%,#000 84%,rgba(0,0,0,.45) 94%,transparent 100%);}
+/* a figura do Mestre aparece inteira, sem corte e sem esmaecimento */
+.hero-figure img{width:auto;max-width:100%;height:auto;max-height:min(74vh,760px);
+  margin-inline:auto;display:block;position:relative;z-index:2;
+  filter:drop-shadow(0 26px 44px rgba(0,0,0,.7)) drop-shadow(0 0 1px rgba(0,0,0,.5));}
+/* sombra de contato no chão, para ele não flutuar */
+.hero-figure::after{content:"";position:absolute;z-index:1;left:50%;bottom:-6px;transform:translateX(-50%);
+  width:76%;height:26px;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(0,0,0,.75) 0%,rgba(0,0,0,.35) 45%,transparent 72%);}
 .hero-figure::before{content:"";position:absolute;z-index:1;left:50%;bottom:0;transform:translateX(-50%);
   width:118%;aspect-ratio:1;border-radius:50%;
   background:radial-gradient(circle,rgba(251,225,10,.24) 0%,rgba(251,225,10,.06) 42%,transparent 68%);}
@@ -466,6 +468,82 @@ footer p{font-size:14px;color:var(--muted);max-width:44ch;}
   border:2px solid #060607;animation:ping 2s ease-in-out infinite;}
 @keyframes ping{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.55;transform:scale(1.22);}}
 
+/* ---------------- jiu kids em destaque ---------------- */
+.kids{background:
+  radial-gradient(60% 50% at 82% 40%,rgba(251,225,10,.09),transparent 62%),
+  linear-gradient(180deg,#0E0E11,#0B0B0D);border-top:1px solid var(--line-soft);}
+.kids-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,60px);align-items:center;}
+@media(max-width:940px){.kids-grid{grid-template-columns:1fr;}}
+.kids-figure{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-lg);}
+.kids-figure img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;}
+.kids-figure figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 20px 16px;
+  background:linear-gradient(transparent,rgba(6,6,7,.94));font-size:12px;font-weight:700;color:#C6C6CD;}
+.kids-figure figcaption b{color:var(--yellow);}
+.kids h2{font-size:clamp(30px,4.2vw,52px);}
+.kids-points{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:14px;}
+.kids-points li{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;font-size:15px;color:#D0D0D6;line-height:1.55;}
+.kids-points svg{width:21px;height:21px;color:var(--yellow);flex:none;margin-top:1px;}
+.kids-points b{color:var(--bone);}
+
+/* ---------------- faixa de fotos ---------------- */
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#000;}
+@media(max-width:900px){.strip{grid-template-columns:repeat(2,1fr);}}
+.strip figure{position:relative;margin:0;overflow:hidden;aspect-ratio:4/3;}
+.strip img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease),filter .5s;
+  filter:grayscale(.32) contrast(1.05);}
+.strip figure:hover img{transform:scale(1.07);filter:grayscale(0) contrast(1.08);}
+.strip figcaption{position:absolute;inset:auto 0 0;padding:34px 16px 14px;
+  background:linear-gradient(transparent,rgba(5,5,7,.93));
+  font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#D8D8DE;}
+.strip figcaption span{display:block;color:var(--yellow);font-size:10px;margin-top:3px;letter-spacing:.12em;}
+
+/* ---------------- atletas profissionais ---------------- */
+.pros{background:
+  radial-gradient(75% 55% at 50% 0%,rgba(232,38,44,.10),transparent 60%),
+  linear-gradient(180deg,#0A0A0B,#0F0F12);border-block:1px solid var(--line-soft);}
+.pro-lead{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);
+  box-shadow:var(--shadow-lg);margin-bottom:26px;}
+.pro-lead img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;}
+.pro-lead figcaption{position:absolute;inset:auto 0 0;padding:clamp(48px,8vw,90px) clamp(18px,3vw,30px) clamp(16px,2.4vw,26px);
+  background:linear-gradient(transparent,rgba(5,5,7,.93));}
+.pro-lead figcaption b{display:block;font-family:Anton,sans-serif;font-weight:400;font-size:clamp(17px,2.3vw,26px);
+  text-transform:uppercase;letter-spacing:.02em;margin-bottom:5px;}
+.pro-lead figcaption span{font-size:13px;color:var(--muted);}
+
+.pro-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+@media(max-width:860px){.pro-grid{grid-template-columns:1fr;}}
+.pro{position:relative;display:grid;grid-template-columns:200px 1fr;gap:0;
+  border:1px solid var(--line-soft);border-radius:var(--r);overflow:hidden;background:var(--panel-2);
+  transition:border-color .35s,transform .35s var(--ease),background .35s;}
+.pro:hover{border-color:var(--yellow);transform:translateY(-5px);background:var(--panel-3);}
+@media(max-width:520px){.pro{grid-template-columns:1fr;}}
+.pro .shot{position:relative;overflow:hidden;min-height:260px;}
+.pro .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease);}
+.pro:hover .shot img{transform:scale(1.06);}
+@media(max-width:520px){.pro .shot{min-height:0;aspect-ratio:4/3;} .pro .shot img{position:static;}}
+.pro .shot::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 45%,rgba(23,23,26,.9) 100%);}
+@media(max-width:520px){.pro .shot::after{background:linear-gradient(transparent 50%,rgba(23,23,26,.92));}}
+.pro .txt{padding:24px 24px 26px;}
+.pro .org{display:inline-flex;align-items:center;gap:7px;font-family:Anton,sans-serif;font-weight:400;
+  font-size:13px;letter-spacing:.16em;padding:5px 12px;border-radius:7px;margin-bottom:12px;}
+.org-ufc{background:var(--red);color:#fff;}
+.org-lfa{background:var(--yellow);color:#0A0A0B;}
+.pro h3{font-size:clamp(22px,2.6vw,29px);margin-bottom:4px;}
+.pro .nick{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--yellow);margin-bottom:14px;}
+.pro p{font-size:14.5px;color:var(--muted);line-height:1.62;}
+.pro .rec{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px dashed rgba(255,255,255,.1);}
+.pro .rec b{font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;padding:6px 11px;border-radius:7px;
+  background:rgba(251,225,10,.1);color:var(--yellow);border:1px solid rgba(251,225,10,.17);}
+.pros-note{margin-top:26px;font-size:12.5px;color:var(--muted-2);text-align:center;}
+
+/* ---------------- faq com fundo ---------------- */
+.faq{position:relative;overflow:hidden;}
+.faq::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:url("assets/tatame-acao.webp") center/cover no-repeat;opacity:.13;filter:grayscale(.6);}
+.faq::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:linear-gradient(180deg,var(--panel) 0%,rgba(17,17,19,.86) 42%,var(--panel) 100%);}
+.faq .wrap{position:relative;z-index:1;}
+
 /* ---------------- reveal ---------------- */
 .reveal,.stagger>*{opacity:1;transform:none;}
 .js .reveal,.js .stagger>*{opacity:0;transform:translateY(26px);
@@ -524,8 +602,8 @@ footer p{font-size:14px;color:var(--muted);max-width:44ch;}
       <a href="#modalidades">Modalidades</a>
       <a href="#mestre">O Mestre</a>
       <a href="#medalhistas">Medalhistas</a>
+      <a href="#profissionais">UFC e LFA</a>
       <a href="#horarios">Horários</a>
-      <a href="#projeto">Projeto Social</a>
       <a href="#local">Onde Treinar</a>
     </nav>
     <a class="btn btn-primary nav-cta" href="https://wa.me/5568999840074?text=Ol%C3%A1%21%20Quero%20agendar%20minha%20aula%20experimental%20gratuita%20na%20RF%20Team." target="_blank" rel="noopener">Aula grátis</a>
@@ -540,6 +618,7 @@ footer p{font-size:14px;color:var(--muted);max-width:44ch;}
     <a href="#modalidades">Modalidades</a>
     <a href="#mestre">O Mestre</a>
     <a href="#medalhistas">Medalhistas</a>
+    <a href="#profissionais">UFC e LFA</a>
     <a href="#horarios">Horários</a>
     <a href="#projeto">Projeto Social</a>
     <a href="#local">Onde Treinar</a>
@@ -581,7 +660,7 @@ footer p{font-size:14px;color:var(--muted);max-width:44ch;}
     </div>
 
     <figure class="hero-figure">
-      <img src="assets/mestre-rivelino.webp" alt="Mestre Rivelino Souza de kimono azul e faixa preta" width="663" height="1500" fetchpriority="high">
+      <img src="assets/mestre-rivelino.webp" alt="Mestre Rivelino Souza de kimono azul e faixa preta" width="627" height="1680" fetchpriority="high">
       <figcaption>Mestre<b>Rivelino Souza</b>Faixa preta 5º grau</figcaption>
     </figure>
   </div>
@@ -603,7 +682,7 @@ footer p{font-size:14px;color:var(--muted);max-width:44ch;}
 <section class="stats">
   <div class="stats-grid">
     <div class="stat"><b data-count="2000">2000</b><span>Ano de fundação da academia</span></div>
-    <div class="stat"><b data-count="5">5</b><span>Grau da faixa preta do Mestre</span></div>
+    <div class="stat"><b data-count="2">2</b><span>Atletas profissionais no UFC e no LFA</span></div>
     <div class="stat"><b data-count="2">2</b><span>Campeões mundiais formados na equipe</span></div>
     <div class="stat"><b data-count="200" data-suffix="+">200+</b><span>Jovens atendidos de graça no projeto social</span></div>
   </div>
@@ -622,46 +701,90 @@ footer p{font-size:14px;color:var(--muted);max-width:44ch;}
 
     <div class="mod-grid stagger">
       <article class="mod">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 4-3 3-3-3 3-4z"/><path d="M5 10l7 4 7-4"/><path d="M5 10v6l7 4 7-4v-6"/></svg></div>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2.9 5.4 4 2.7 8.8l2.9 1.7v4.1h12.8v-4.1l2.9-1.7L18.6 4 15 2.9"/><path d="M9 2.9 12 8.9l3-6"/><path d="M10.6 3.4 12 10l1.4-6.6"/><rect x="4.7" y="15.3" width="14.6" height="3.1" rx=".8"/><path d="M10.2 18.4 9.5 21.5M13.8 18.4l.7 3.1"/></svg></div>
         <h3>Jiu-Jitsu Adulto</h3>
         <p>O coração da casa. Quedas, passagem de guarda, raspagem e finalização, no ritmo de quem está começando e no ritmo de quem vai competir.</p>
         <div class="times"><b>Seg, Qua e Sex</b><b>07h30</b><b>Meio-dia</b><b>18h</b></div>
       </article>
 
       <article class="mod">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="18" cy="17" r="3"/></svg></div>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6l4.3 2.1L21 9.6l-2.9 1.4v9.9H5.9V11L3 9.6l1.7-4.5z"/><path d="M9 3c0 1.7 1.3 3 3 3s3-1.3 3-3"/><path d="M8.3 13.8h7.4M8.3 16.8h7.4"/></svg></div>
         <h3>Jiu-Jitsu No-Gi</h3>
         <p>Sem kimono, com pegada diferente e ritmo mais rápido. É a modalidade que abre as portas das disputas de submission dentro e fora do estado.</p>
         <div class="times"><b>Ter e Qui</b><b>Meio-dia</b></div>
       </article>
 
       <article class="mod">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15 20c0-2.3 1.3-4 3-4s3 1.7 3 4"/></svg></div>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4.8" r="2.7"/><path d="M7.4 21v-6.6l-2.1 1.2-1.5-2.5 3.8-2.7c.6-.5 1.4-.7 2.1-.7h4.6c.8 0 1.5.2 2.1.7l3.8 2.7-1.5 2.5-2.1-1.2V21"/><path d="M7.4 15.8h9.2"/><path d="M9.9 10 12 13.4 14.1 10"/></svg></div>
         <h3>Jiu Kids</h3>
         <p>Disciplina, coordenação e respeito antes de qualquer medalha. Crianças aprendem a cair, levantar e resolver conflito sem violência.</p>
         <div class="times"><b>Ter e Qui</b><b>18h</b></div>
       </article>
 
       <article class="mod">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 4l-3 7 4 2-5 7"/><circle cx="17" cy="5" r="2"/></svg></div>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.4 9.2c0-3 2.2-5.2 5.2-5.2s5.2 2.2 5.2 5.2v3.2c0 .8-.3 1.5-.8 2v2.2H8.2v-2.2c-.5-.5-.8-1.2-.8-2"/><path d="M7.4 10.2H6c-1 0-1.8.8-1.8 1.8v1c0 1 .8 1.8 1.8 1.8h1.4"/><path d="M8.2 16.6v2.1c0 .8.7 1.5 1.5 1.5h4.6c.8 0 1.5-.7 1.5-1.5v-2.1"/></svg></div>
         <h3>Kickboxing Coletivo</h3>
         <p>Condicionamento pesado, socos, chutes e muito trabalho de aparelho. Serve para quem quer emagrecer e para quem quer subir no ringue.</p>
         <div class="times"><b>Seg, Qua e Sex</b><b>16h</b><b>20h</b></div>
       </article>
 
       <article class="mod">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M12 12v9M8.5 16h7"/></svg></div>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.6 9.6c0-2.7 2-4.7 4.7-4.7s4.7 2 4.7 4.7v2.9c0 .7-.3 1.3-.7 1.8v2H5.3v-2c-.4-.5-.7-1.1-.7-1.8"/><path d="M4.6 10.5H3.4c-.9 0-1.6.7-1.6 1.6v.9c0 .9.7 1.6 1.6 1.6h1.2"/><path d="M5.3 16.3V18c0 .8.6 1.4 1.4 1.4h4.5c.8 0 1.4-.6 1.4-1.4v-1.7"/><circle cx="18.6" cy="7.4" r="3"/><path d="M18.6 10.4v5.4M16.4 13.4h4.4"/></svg></div>
         <h3>Kickboxing Feminino</h3>
         <p>Turma só de mulheres, com ritmo e ambiente próprios. Defesa pessoal de verdade, sem o constrangimento de dividir o espaço com a turma mista.</p>
         <div class="times"><b>Ter e Qui</b><b>17h</b></div>
       </article>
 
       <article class="mod">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v6c0 4.4-3.4 7.4-8 8-4.6-.6-8-3.6-8-8V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.6 8.6H2.4v4.6h6.2M15.4 8.6h6.2v4.6h-6.2"/><rect x="8.4" y="7.4" width="7.2" height="7" rx="1.4"/><path d="M10.2 14.4v6.2l1.4-1.3M13.8 14.4v6.2l-1.4-1.3"/></svg></div>
         <h3>Karatê</h3>
         <p>A base tradicional: postura, foco e golpe limpo. Excelente porta de entrada nas artes marciais para crianças e adultos.</p>
         <div class="times"><b>Ter e Qui</b><b>19h</b></div>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ jiu kids em destaque ============ -->
+<section class="sec kids" id="kids">
+  <div class="wrap">
+    <div class="kids-grid">
+      <div class="reveal">
+        <p class="eyebrow">Jiu-Jitsu infantil</p>
+        <h2>O que seu filho<br>aprende no tatame</h2>
+        <p class="lead" style="margin-top:20px">
+          A turma Jiu Kids não existe para fabricar lutador. Ela existe para a criança aprender a
+          cair e levantar, a respeitar quem está na frente e a resolver conflito sem violência.
+          Medalha, quando vem, é consequência.
+        </p>
+        <ul class="kids-points">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span><b>Disciplina que sai do tatame.</b> Horário, uniforme limpo, cumprimentar o professor. Pai e mãe percebem a diferença em casa e na escola.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span><b>Defesa pessoal de verdade.</b> Jiu-jitsu é a arte de controlar sem machucar, a melhor resposta para quem sofre bullying.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span><b>Gasta energia e tira da tela.</b> Duas vezes por semana correndo, caindo e rolando, no lugar de mais uma tarde no celular.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span><b>Caminho aberto para competir.</b> Quem quiser, compete. As meninas da casa já subiram no lugar mais alto do pódio fora do estado.</span>
+          </li>
+        </ul>
+        <div class="hero-actions" style="margin-top:32px">
+          <a class="btn btn-primary" href="https://wa.me/5568999840074?text=Ol%C3%A1%21%20Quero%20saber%20sobre%20a%20turma%20de%20Jiu%20Kids%20da%20RF%20Team." target="_blank" rel="noopener">Quero matricular meu filho</a>
+          <a class="btn btn-ghost" href="#horarios">Ver horário da turma</a>
+        </div>
+      </div>
+
+      <figure class="kids-figure reveal">
+        <img src="assets/jiu-kids.webp" alt="Jovens atletas da RF Team no lugar mais alto do pódio do Campeonato Estadual de Jiu-Jitsu de Rondônia" width="1280" height="800" loading="lazy">
+        <figcaption><b>Terça e quinta, às 18h</b> &middot; atletas da casa no pódio do Estadual de Jiu-Jitsu de Rondônia</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -688,7 +811,7 @@ footer p{font-size:14px;color:var(--muted);max-width:44ch;}
         <ul class="tl">
           <li><b>1995</b><span>Começa a ensinar jiu-jitsu a jovens lutadores em Rio Branco.</span></li>
           <li><b>2000</b><span>Funda a academia, que se tornaria a RF Team, na Rua Belém, em Nova Estação.</span></li>
-          <li><b>Anos 2000</b><span>É um dos primeiros professores de Francimar “Bodão” Barroso, acreano que chegaria ao UFC.</span></li>
+          <li><b>2013 a 2017</b><span>Treina jiu-jitsu e kickboxing com um garoto da Baixada da Sobral chamado Matheus Camilo, hoje no UFC.</span></li>
           <li><b>2015</b><span>Traz Ronaldo “Jacaré” Souza, então número 2 do peso-médio do UFC, para um seminário em Rio Branco.</span></li>
           <li><b>2016</b><span>Prata no Campeonato Mundial de Jiu-Jitsu Esportivo, categoria master 3, no Ibirapuera.</span></li>
           <li><b>2019</b><span>Campeão Mundial da CBJJE na master 4, peso médio faixa preta, com vitórias por finalização.</span></li>
@@ -726,6 +849,26 @@ footer p{font-size:14px;color:var(--muted);max-width:44ch;}
     </div>
   </div>
 </section>
+
+<!-- ============ faixa de fotos ============ -->
+<div class="strip reveal" aria-label="Imagens da equipe RF Team">
+  <figure>
+    <img src="assets/tatame-acao.webp" alt="Dois atletas da RF Team em combate no tatame" width="1280" height="800" loading="lazy">
+    <figcaption>No tatame<span>Treino de competição</span></figcaption>
+  </figure>
+  <figure>
+    <img src="assets/kickboxing.webp" alt="Atleta da RF Team em combate de kickboxing" width="1280" height="800" loading="lazy">
+    <figcaption>Kickboxing<span>Do condicionamento ao ringue</span></figcaption>
+  </figure>
+  <figure>
+    <img src="assets/delegacao-mundial.webp" alt="Delegação da RF Team embarcando para o Campeonato Mundial em São Paulo" width="1280" height="800" loading="lazy">
+    <figcaption>Rumo ao Mundial<span>Embarque para São Paulo</span></figcaption>
+  </figure>
+  <figure>
+    <img src="assets/alissandro-podio.webp" alt="Pódio do Campeonato Mundial de Jiu-Jitsu de 2025, no Ibirapuera" width="1280" height="800" loading="lazy">
+    <figcaption>Pódio mundial<span>Ibirapuera, 2025</span></figcaption>
+  </figure>
+</div>
 
 <!-- ============ medalhistas / scroller ============ -->
 <section class="medals" id="medalhistas">
@@ -843,6 +986,65 @@ footer p{font-size:14px;color:var(--muted);max-width:44ch;}
   </div>
 
   <div class="wrap"><p class="medals-note">Conquistas apuradas em reportagens do ge Globo, ContilNet, ac24horas, A Gazeta do Acre e Notícias da Hora, e em resultados publicados por CBJJE, IBJJF, AJP e Copa Pódio.</p></div>
+</section>
+
+<!-- ============ atletas profissionais ============ -->
+<section class="sec pros" id="profissionais">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">Do tatame da Rua Belém para o mundo</p>
+        <h2>Daqui saiu gente<br>que luta no UFC</h2>
+      </div>
+      <p class="lead">Dois profissionais em atividade carregam o nome do Acre nos maiores eventos de MMA do planeta. Os dois começaram cedo, num tatame de bairro em Rio Branco.</p>
+    </div>
+
+    <figure class="pro-lead reveal">
+      <img src="assets/matheus-mestre.webp" alt="Mestre Rivelino Souza abraça Matheus Camilo na academia em Rio Branco, após o acreano assinar com o UFC" width="1280" height="800" loading="lazy">
+      <figcaption>
+        <b>“Ele tem muita vontade. Quando você quer, tem que correr atrás, não pode desistir.”</b>
+        <span>Mestre Rivelino sobre Matheus Camilo, que voltou à academia depois de assinar com o UFC e deu um kimono novo de presente ao professor</span>
+      </figcaption>
+    </figure>
+
+    <div class="pro-grid stagger">
+      <article class="pro">
+        <div class="shot">
+          <img src="assets/matheus-camilo.webp" alt="Matheus Camilo, o Jaguar, lutador acreano do UFC" width="560" height="747" loading="lazy">
+        </div>
+        <div class="txt">
+          <span class="org org-ufc">UFC</span>
+          <h3>Matheus Camilo</h3>
+          <p class="nick">“Jaguar” &middot; Peso-leve</p>
+          <p>
+            Criado na Baixada da Sobral, treinou jiu-jitsu e kickboxing aqui entre 2013 e 2017, sob o
+            comando do Mestre Rivelino. Virou o segundo acreano da história a chegar ao UFC, depois de
+            uma vitória que arrancou elogios do próprio Dana White.
+          </p>
+          <div class="rec"><b>Cartel 11-3</b><b>2 vitórias no UFC</b><b>5 nocautes</b></div>
+        </div>
+      </article>
+
+      <article class="pro">
+        <div class="shot">
+          <img src="assets/breno-yuri.webp" alt="Breno Yuri, lutador acreano de MMA do LFA" width="560" height="747" loading="lazy">
+        </div>
+        <div class="txt">
+          <span class="org org-lfa">LFA</span>
+          <h3>Breno Yuri</h3>
+          <p class="nick">Peso-galo &middot; Legacy Fighting Alliance</p>
+          <p>
+            Estreou no MMA profissional em 2023 e emendou quatro vitórias seguidas, duas delas no LFA,
+            a liga que mais abastece o UFC. No começo de 2026 finalizou Lucas Andrade com um triângulo
+            em Brasília. O alvo declarado é o mesmo octógono.
+          </p>
+          <div class="rec"><b>Cartel 6-2</b><b>3 lutas no LFA</b><b>Finalização e nocaute</b></div>
+        </div>
+      </article>
+    </div>
+
+    <p class="pros-note">Cartéis e resultados conferidos em reportagens do ge Globo, UOL e Ag Fight, e nas fichas oficiais do UFC e do LFA.</p>
+  </div>
 </section>
 
 <!-- ============ destaque: mestre alissandro ============ -->
@@ -1067,7 +1269,7 @@ footer p{font-size:14px;color:var(--muted);max-width:44ch;}
         <ul>
           <li><a href="#modalidades">Jiu-Jitsu Adulto</a></li>
           <li><a href="#modalidades">Jiu-Jitsu No-Gi</a></li>
-          <li><a href="#modalidades">Jiu Kids</a></li>
+          <li><a href="#kids">Jiu Kids</a></li>
           <li><a href="#modalidades">Kickboxing Coletivo</a></li>
           <li><a href="#modalidades">Kickboxing Feminino</a></li>
           <li><a href="#modalidades">Karatê</a></li>
@@ -1079,6 +1281,7 @@ footer p{font-size:14px;color:var(--muted);max-width:44ch;}
         <ul>
           <li><a href="#mestre">Mestre Rivelino</a></li>
           <li><a href="#medalhistas">Medalhistas</a></li>
+          <li><a href="#profissionais">Atletas profissionais</a></li>
           <li><a href="#horarios">Horários</a></li>
           <li><a href="#projeto">Combate pelo Bem</a></li>
           <li><a href="#local">Como chegar</a></li>
